@@ -26,8 +26,6 @@ int main (void)
           /* code */
         }
     }
-    
-    usleep(10000);
   }
   
   return 0 ;
