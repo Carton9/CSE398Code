@@ -12,20 +12,16 @@ int main (void)
   wiringPiSetup () ;
   SerialHandler sh;
   Datapacket* dp=new Datapacket;
+  Datapacket* dp2=new Datapacket;
   dp->data="test";
   dp->length=4;
   
   while (1)
   {
     sh << dp;
-    cout << dp->data << endl;
-    // for (int i = 0; i < 100000; i++)
-    // {
-    //    for (int i = 0; i < 1000; i++)
-    //     {
-    //       /* code */
-    //     }
-    // }
+    cout << "DP1" << dp->data << endl;
+    sh >>dp2;
+    cout << "DP2" << dp2->data << endl;
     usleep(1000);
   }
   
