@@ -19,7 +19,9 @@ void SerialHandler::operator >>(Datapacket* dp){
     // while (length==0)length=serialDataAvail(fd);
     // dp->data=new char[length];
     // read(fd,dp->data,length);
-    cout << serialGetchar(fd);
+    int data=serialGetchar(fd);
+    if(data!=-1)
+        cout << (char)data;
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);
