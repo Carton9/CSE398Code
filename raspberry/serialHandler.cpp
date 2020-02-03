@@ -15,7 +15,7 @@ void SerialHandler::operator << (Datapacket* p){
     serialFlush(fd);
 }
 void SerialHandler::operator >>(Datapacket* dp){
-    // int length=0;
+    int length=0;
     // while (length==0)length=serialDataAvail(fd);
     // dp->data=new char[length];
     // read(fd,dp->data,length);
