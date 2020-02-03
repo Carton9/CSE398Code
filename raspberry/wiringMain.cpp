@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <cstdlib>
+#include <iostream> 
+#include <fstream>
 #include <wiringPi.h>
+#include <wiringSerial.h>
+#include <unistd.h>
 #include "serialHandler.h"
 int main (void)
 {
