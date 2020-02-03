@@ -22,7 +22,7 @@ int main (void)
     cout << "DP1" << dp->data << endl;
     sh >>dp2;
     cout << "DP2" << dp2->data << endl;
-    usleep(1000);
+    usleep(100000);
   }
   
   return 0 ;
