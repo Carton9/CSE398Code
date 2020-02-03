@@ -12,12 +12,20 @@ int main (void)
   wiringPiSetup () ;
   SerialHandler sh;
   Datapacket* dp=new Datapacket;
-  dp->data="test--";
+  dp->data="test";
   dp->length=4;
   
   while (1)
   {
     sh << dp;
+    for (int i = 0; i < 100000; i++)
+    {
+       for (int i = 0; i < 100000; i++)
+        {
+          /* code */
+        }
+    }
+    
     usleep(10000);
   }
   
