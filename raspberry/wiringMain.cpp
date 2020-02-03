@@ -12,7 +12,8 @@ int main (void)
   wiringPiSetup () ;
   SerialHandler sh;
   Datapacket* dp=new Datapacket;
-  dp->data="test";
+  char tp1[4]={'t','e','s','t'};
+  dp->data=tp1;
   dp->length=4;
   
   while (1)

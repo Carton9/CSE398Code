@@ -8,7 +8,7 @@ void SerialHandler::operator << (Datapacket* p){
     for (int i = 0; i < p->length; i++)
     {
         char c=(p->data[i]);
-         serialPutchar(fd,c);
+        serialPutchar(fd,c);
     }
     serialFlush(fd);
 }
