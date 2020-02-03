@@ -25,6 +25,7 @@ void SerialHandler::operator >>(Datapacket* dp){
     cout << "tp1"<<endl;
     if(data!=-1)
         cout << (char)data;
+    cout << "tp3"<<endl;
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);

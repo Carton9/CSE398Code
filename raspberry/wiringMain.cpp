@@ -21,7 +21,7 @@ int main (void)
     sh << dp;
     cout << "DP1" << dp->data << endl;
     sh >>dp2;
-    cout << "DP2" << dp2->data << endl;
+    // cout << "DP2" << dp2->data << endl;
     usleep(100000);
   }
   
