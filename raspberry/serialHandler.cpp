@@ -10,9 +10,9 @@ SerialHandler::SerialHandler(){
     read(fd,buf,4096);
 }
 void SerialHandler::operator << (Datapacket* p){
-    serialFlush(fd);
+    // serialFlush(fd);
     serialPuts(fd,p->data);
-    serialFlush(fd);
+    // serialFlush(fd);
 }
 void SerialHandler::operator >>(Datapacket* dp){
     int length=0;
