@@ -23,9 +23,9 @@ void SerialHandler::operator >>(Datapacket* dp){
     // cout << "tp2"<<endl;
     while (serialDataAvail(fd)!=0)
     {
-       cout <<serialGetchar(fd);
+       cout <<(char)serialGetchar(fd);
     }
-    
+    cout << endl;
     
 }
 SerialHandler::~SerialHandler(){
