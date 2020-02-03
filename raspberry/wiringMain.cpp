@@ -18,9 +18,10 @@ int main (void)
   while (1)
   {
     sh << dp;
+    cout << dp->data << endl;
     for (int i = 0; i < 100000; i++)
     {
-       for (int i = 0; i < 100000; i++)
+       for (int i = 0; i < 1000; i++)
         {
           /* code */
         }
