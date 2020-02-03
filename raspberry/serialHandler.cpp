@@ -6,7 +6,7 @@ SerialHandler::SerialHandler(){
 }
 void SerialHandler::operator << (Datapacket* p){
     serialFlush(fd);
-    serialPuts(fd,p->data[i]);
+    serialPuts(fd,p->data);
     serialFlush(fd);
 }
 void SerialHandler::operator >>(Datapacket* dp){
