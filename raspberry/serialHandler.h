@@ -20,8 +20,8 @@ class SerialHandler
     public:
         SerialHandler();
         ~SerialHandler(); // unexport all pins opened by this class only
-        void operator << (Datapacket p); 
-        Datapacket operator >>();
+        void operator << (Datapacket* p); 
+        void operator >> (Datapacket* p);
     private:
         int fd;
 };
