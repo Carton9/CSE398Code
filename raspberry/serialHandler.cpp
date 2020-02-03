@@ -19,9 +19,7 @@ void SerialHandler::operator >>(Datapacket* dp){
     // while (length==0)length=serialDataAvail(fd);
     // dp->data=new char[length];
     // read(fd,dp->data,length);
-    while (length==0)length=serialDataAvail(fd);
     // cout << "tp2"<<endl;
-    usleep(100);
     while (serialDataAvail(fd)!=0)
     {
        cout <<(char)serialGetchar(fd);
