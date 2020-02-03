@@ -6,7 +6,7 @@ int main (void)
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
   SerialHandler sh;
-  Datapacket dp=new Datapacket;
+  Datapacket* dp=new Datapacket;
   dp->data="test";
   dp->length=4;
   
