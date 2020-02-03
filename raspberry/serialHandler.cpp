@@ -2,7 +2,12 @@
 
 SerialHandler::SerialHandler(){
     fd=serialOpen("/dev/ttyS0",9600);
-    
+    char buf[4096];
+    read(fd,buf,4096);
+    read(fd,buf,4096);
+    read(fd,buf,4096);
+    read(fd,buf,4096);
+    read(fd,buf,4096);
 }
 void SerialHandler::operator << (Datapacket* p){
     serialFlush(fd);
