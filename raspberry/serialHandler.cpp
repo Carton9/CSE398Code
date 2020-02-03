@@ -21,11 +21,12 @@ void SerialHandler::operator >>(Datapacket* dp){
     // read(fd,dp->data,length);
     while (length==0)length=serialDataAvail(fd);
     cout << "tp2"<<endl;
-    int data=serialGetchar(fd);
-    cout << "tp1"<<endl;
-    if(data!=-1)
-        cout << (char)data;
-    cout << "tp3"<<endl;
+    while (serialDataAvail(fd)!=0)
+    {
+       cout <<serialGetchar(fd);
+    }
+    
+    
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);

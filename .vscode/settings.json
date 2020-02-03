@@ -5,6 +5,7 @@
         "fstream": "c",
         "string_view": "c",
         "array": "c",
-        "string": "c"
+        "string": "c",
+        "iostream": "cpp"
     }
 }
