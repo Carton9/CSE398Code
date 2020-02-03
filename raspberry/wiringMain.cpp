@@ -18,6 +18,7 @@ int main (void)
   while (1)
   {
     sh << dp;
+    usleep(10000);
   }
   
   return 0 ;
