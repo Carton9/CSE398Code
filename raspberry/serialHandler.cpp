@@ -6,11 +6,7 @@ SerialHandler::SerialHandler(){
 }
 void SerialHandler::operator << (Datapacket* p){
     serialFlush(fd);
-    for (int i = 0; i < p->length; i++){
-        char c=(p->data[i]);
-        cout << "TP" << c << endl;
-        serialPutchar(fd,c);
-    }
+    serialPuts(fd,p->data[i]);
     serialFlush(fd);
 }
 void SerialHandler::operator >>(Datapacket* dp){
