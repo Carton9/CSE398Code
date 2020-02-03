@@ -12,9 +12,7 @@ void SerialHandler::operator << (Datapacket* p){
 void SerialHandler::operator >>(Datapacket* dp){
     int length=serialDataAvail(fd);
     dp->data=new char[length];
-    for(int i=0;i<length;i++){
-        dp->data[i]=serialGetchar(fd);
-    }
+    read(fd,dp->data,length);
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);
