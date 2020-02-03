@@ -20,7 +20,9 @@ void SerialHandler::operator >>(Datapacket* dp){
     // dp->data=new char[length];
     // read(fd,dp->data,length);
     while (length==0)length=serialDataAvail(fd);
+    cout << "tp2"<<endl;
     int data=serialGetchar(fd);
+    cout << "tp1"<<endl;
     if(data!=-1)
         cout << (char)data;
 }
