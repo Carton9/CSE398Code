@@ -8,6 +8,7 @@ void SerialHandler::operator << (Datapacket* p){
     serialFlush(fd);
     for (int i = 0; i < p->length; i++){
         char c=(p->data[i]);
+        cout << "TP" << c << endl;
         serialPutchar(fd,c);
     }
     serialFlush(fd);
