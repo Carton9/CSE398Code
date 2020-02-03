@@ -4,8 +4,8 @@
 #include <cstdlib>
 #include <iostream> 
 #include <fstream>
-#include <wiringSerial.h>
 #include <wiringPi.h>
+#include <wiringSerial.h>
 #include <unistd.h>
 
 using namespace std;
