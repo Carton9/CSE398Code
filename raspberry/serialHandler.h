@@ -11,7 +11,7 @@
 using namespace std;
 struct Datapacket
 {
-    char[] data;
+    char* data;
     int length;
 };
 
