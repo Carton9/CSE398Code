@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "serialhandler.h": "c",
+        "fstream": "c",
+        "string_view": "c",
+        "array": "c",
+        "string": "c"
+    }
+}

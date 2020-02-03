@@ -11,14 +11,24 @@ int main (void)
 
   wiringPiSetup () ;
 
-  pinMode (LED, OUTPUT) ;
+  // pinMode (LED, OUTPUT) ;
 
-  for (;;)
+  // for (;;)
+  // {
+  //   digitalWrite (LED, 1) ;     // On
+  //   delay (500) ;               // mS
+  //   digitalWrite (LED, 0) ;     // Off
+  //   delay (500) ;
+  // }
+  SerialHandler sh;
+  Datapacket dp=new Datapacket;
+  dp->data="test";
+  dp->length=4;
+  
+  while (1)
   {
-    digitalWrite (LED, 1) ;     // On
-    delay (500) ;               // mS
-    digitalWrite (LED, 0) ;     // Off
-    delay (500) ;
+    sh << dp;
   }
+  
   return 0 ;
 }
