@@ -23,6 +23,7 @@ int main (void)
     // sh << dp;
     // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
+    cout << dp2->length;
     cod>=dp2;
     for (int i = 0; i < dp2->length; i++)
     {
