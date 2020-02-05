@@ -19,7 +19,9 @@ void SerialHandler::operator >>(Datapacket* dp){
     int isBegin=0;
     while (serialDataAvail(fd)!=0)
     {
-       if(serialGetchar(fd)==10)isBegin=1;
+        int value=serialGetchar(fd);
+       if(value==10)isBegin=1;
+       cout << value << endl;
        if(isBegin==1){
             buffer[length]=(char)serialGetchar(fd);
             length++;
