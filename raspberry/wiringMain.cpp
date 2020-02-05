@@ -26,7 +26,7 @@ int main (void)
     if (dp2->length<1)continue;
     
     // cout << dp2->length ;
-    cout << "Value" << cod<<dp2 << endl;
+    cout << "Value" << (cod<<dp2) << endl;
     for (int i = 0; i < dp2->length; i++)
     {
         cout << hex << (uint)dp2->data[i] << " ";
