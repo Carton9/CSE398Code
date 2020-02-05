@@ -19,13 +19,13 @@ void SerialHandler::operator >>(Datapacket* dp){
     int isBegin=0;
     while (serialDataAvail(fd)!=0)
     {
-        int value=serialGetchar(fd);
-        cout << value << " ";
-       if(value==10){
-           isBegin=1;
-            cout << endl;
-       }
-       if(isBegin==1){
+    //     int value=serialGetchar(fd);
+    //     cout << value << " ";
+    //    if(value==10){
+    //        isBegin=1;
+    //         cout << endl;
+    //    }
+       if(isBegin==0){
             buffer[length]=(char)serialGetchar(fd);
             length++;
             usleep(100);
@@ -39,6 +39,7 @@ void SerialHandler::operator >>(Datapacket* dp){
     memcpy(frame,buffer,length);
     dp->data=frame;
     dp->length=length;
+    if(length!=6)dp->length=0;
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);
