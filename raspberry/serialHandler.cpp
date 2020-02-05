@@ -3,11 +3,6 @@
 SerialHandler::SerialHandler(){
     fd=serialOpen("/dev/ttyS0",9600);
     char buf[4096];
-    read(fd,buf,4096);
-    read(fd,buf,4096);
-    read(fd,buf,4096);
-    read(fd,buf,4096);
-    read(fd,buf,4096);
 }
 void SerialHandler::operator << (Datapacket* p){
     // serialFlush(fd);
@@ -20,12 +15,18 @@ void SerialHandler::operator >>(Datapacket* dp){
     // dp->data=new char[length];
     // read(fd,dp->data,length);
     // cout << "tp2"<<endl;
+    char buffer[40960];
+    int length=0;
     while (serialDataAvail(fd)!=0)
     {
-       cout <<(char)serialGetchar(fd);
+       buffer[length]=(char)serialGetchar(fd);
+       length++;
+       if(buffer[length-1]==0)break;
     }
-    cout << endl;
-    
+    char* frame=(char*)malloc(sizeof(char)*length);
+    memcpy(frame,buffer,length);
+    dp->data=frame;
+    dp->length=length;
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);

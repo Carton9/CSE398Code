@@ -18,10 +18,14 @@ int main (void)
   
   while (1)
   {
-    sh << dp;
-    cout << "DP1" << dp->data << endl;
+    // sh << dp;
+    // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
-    // cout << "DP2" << dp2->data << endl;
+    for (int i = 0; i < dp2->length; i++)
+    {
+        cout << hex << dp2->data[i];
+    }
+    cout << endl;
     usleep(100000);
   }
   
