@@ -32,7 +32,7 @@ int main (void)
     if (dp2->length<1)continue;
     cod>=dp2;
     FloatArray fa;
-    fa.data=dp2->data;
+    memcpy(fa.data,dp2->data,40)
     for (int i = 0; i < 10; i++)
     {
       cout << fa.array[i] << " ";
