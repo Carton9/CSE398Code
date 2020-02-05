@@ -16,7 +16,6 @@ void SerialHandler::operator >>(Datapacket* dp){
     // read(fd,dp->data,length);
     // cout << "tp2"<<endl;
     char buffer[40960];
-    int length=0;
     while (serialDataAvail(fd)!=0)
     {
        buffer[length]=(char)serialGetchar(fd);
