@@ -20,6 +20,7 @@ void SerialHandler::operator >>(Datapacket* dp){
     {
        buffer[length]=(char)serialGetchar(fd);
        length++;
+       usleep(100);
        if(buffer[length-1]==0)break;
     }
     char* frame=(char*)malloc(sizeof(char)*length);
