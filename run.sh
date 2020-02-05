@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
 git commit -m "debug"
-git push
+git -o StrictHostKeyChecking=no push
