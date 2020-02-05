@@ -24,7 +24,7 @@ int main (void)
     // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
     cout << dp2->length;
-    cod>>dp2;
+    cod<<dp2;
     for (int i = 0; i < dp2->length; i++)
     {
         cout << hex << (uint)dp2->data[i] << " ";
