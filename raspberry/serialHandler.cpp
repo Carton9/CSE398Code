@@ -16,12 +16,19 @@ void SerialHandler::operator >>(Datapacket* dp){
     // read(fd,dp->data,length);
     // cout << "tp2"<<endl;
     char buffer[40960];
+    int isBegin=0;
     while (serialDataAvail(fd)!=0)
     {
-       buffer[length]=(char)serialGetchar(fd);
-       length++;
-       usleep(100);
-       if(buffer[length-1]==0)break;
+       if(serialGetchar(fd)==10)isBegin=1;
+       if(isBegin==1){
+            buffer[length]=(char)serialGetchar(fd);
+            length++;
+            usleep(100);
+            if(buffer[length-1]==0){
+                isBegin=0;
+                break;
+            }
+       }
     }
     char* frame=(char*)malloc(sizeof(char)*length);
     memcpy(frame,buffer,length);
