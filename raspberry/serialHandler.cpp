@@ -39,7 +39,6 @@ void SerialHandler::operator >>(Datapacket* dp){
     memcpy(frame,buffer,length);
     dp->data=frame;
     dp->length=length;
-    if(length!=6)dp->length=0;
 }
 SerialHandler::~SerialHandler(){
     serialClose(fd);

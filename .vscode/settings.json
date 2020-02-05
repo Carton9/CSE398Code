@@ -6,6 +6,7 @@
         "string_view": "c",
         "array": "c",
         "string": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
