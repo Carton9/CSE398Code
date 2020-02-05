@@ -23,15 +23,16 @@ int main (void)
     // sh << dp;
     // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
-    if (dp2->length<1)continue;
     
-    // cout << dp2->length ;
-    cout << "Value" << (cod<<dp2) << endl;
     for (int i = 0; i < dp2->length; i++)
     {
         cout << hex << (uint)dp2->data[i] << " ";
     }
     cout << endl;
+    if (dp2->length<1)continue;
+    
+    // cout << dp2->length ;
+    cout << "Value" << (cod<<dp2) << endl;
     usleep(100000);
   }
   
