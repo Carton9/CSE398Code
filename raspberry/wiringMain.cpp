@@ -23,7 +23,7 @@ int main (void)
     sh >>dp2;
     for (int i = 0; i < dp2->length; i++)
     {
-        cout << hex << (uint)dp2->data[i];
+        cout << hex << (uint)dp2->data[i] << " ";
     }
     cout << endl;
     usleep(100000);
