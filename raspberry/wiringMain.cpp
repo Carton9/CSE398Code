@@ -6,6 +6,7 @@
 #include <wiringSerial.h>
 #include <unistd.h>
 #include "serialHandler.h"
+#include "COBHandler.h"
 int main (void)
 {
   printf ("Raspberry Pi - Gertboard Blink\n") ;
@@ -13,6 +14,7 @@ int main (void)
   SerialHandler sh;
   Datapacket* dp=new Datapacket;
   Datapacket* dp2=new Datapacket;
+  COBHandler cod;
   dp->data="test";
   dp->length=4;
   
@@ -21,6 +23,7 @@ int main (void)
     // sh << dp;
     // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
+    cod>=dp2;
     for (int i = 0; i < dp2->length; i++)
     {
         cout << hex << (uint)dp2->data[i] << " ";
