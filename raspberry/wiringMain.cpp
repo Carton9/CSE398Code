@@ -7,6 +7,12 @@
 #include <unistd.h>
 #include "serialHandler.h"
 #include "COBHandler.h"
+union FloatArray
+{
+  float array[10];
+  char data[sizeof(float)*10];
+};
+
 int main (void)
 {
   printf ("Raspberry Pi - Gertboard Blink\n") ;
@@ -23,16 +29,26 @@ int main (void)
     // sh << dp;
     // cout  << "DP1" << dp->data << endl;
     sh >>dp2;
-    
-    for (int i = 0; i < dp2->length; i++)
+    if (dp2->length<1)continue;
+    cod>=dp2;
+    FloatArray fa;
+    fa.data=dp2->data;
+    for (int i = 0; i < 10; i++)
     {
-        cout << hex << (uint)dp2->data[i] << " ";
+      cout << fa.array[i] << " ";
     }
     cout << endl;
-    if (dp2->length<1)continue;
     
-    // cout << dp2->length ;
-    cout << "Value" << (cod<<dp2) << endl;
+    // for (int i = 0; i < dp2->length; i++)
+    // {
+    //     cout << hex << (uint)dp2->data[i] << " ";
+    // }
+    // cout << endl;
+    // if (dp2->length<1)continue;
+    
+    // // cout << dp2->length ;
+    // cout << "Value" << (cod<<dp2) << endl;
+
     usleep(100000);
   }
   
