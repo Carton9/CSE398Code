@@ -106,6 +106,11 @@
             *sh>>dp;
             cout << "TP3.12 " << "Packet Size " << dp->length << endl;
             cod>=dp;
+            for (int i = 0; i < dp2->length; i++){
+                cout << hex << (uint)dp2->data[i] << " ";
+            
+            }
+            cout << endl;
             if (dp->length<2)
                 return;
             
