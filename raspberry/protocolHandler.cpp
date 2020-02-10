@@ -25,7 +25,7 @@
             byte packet[length*4+2];
             packet[0]=DATA;
             packet[1]=(byte)length;
-            memcpy(packet+2,dataBuffer,length*4)
+            memcpy(packet+2,dataBuffer,length*4);
             dp->data=packet;
             dp->length=length*4+2;
             cod<=dp;
