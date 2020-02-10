@@ -13,17 +13,11 @@ void SerialHandler::operator >>(Datapacket* dp){
     // while (length==0)length=serialDataAvail(fd);
     // dp->data=new char[length];
     // read(fd,dp->data,length);
-    // cout << "tp2"<<endl;
+    cout << "TP3.111"<<endl;
     char buffer[40960];
     int isBegin=0;
     while (1)
     {
-    //     int value=serialGetchar(fd);
-    //     cout << value << " ";
-    //    if(value==10){
-    //        isBegin=1;
-    //         cout << endl;
-    //    }
        if(isBegin==0){
             buffer[length]=(char)serialGetchar(fd);
             length++;
@@ -34,8 +28,10 @@ void SerialHandler::operator >>(Datapacket* dp){
             }
        }
     }
+    cout << "TP3.112"<<endl;
     char* frame=(char*)malloc(sizeof(char)*length);
     memcpy(frame,buffer,length);
+    cout << "TP3.113"<<endl;
     dp->data=frame;
     dp->length=length;
 }
