@@ -9,7 +9,7 @@
             byte data[2]={COMMAND,command};
             if(dp==NULL)
                 return;
-            dp->data=data;
+            memcpy(dp->data,data,2);
             dp->length=2;
             cod<=dp;
             sh << dp;
