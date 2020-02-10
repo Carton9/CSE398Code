@@ -12,7 +12,7 @@
             memcpy(dp->data,data,2);
             dp->length=2;
             cod<=dp;
-            &sh << dp;
+            *sh << dp;
         }
         void ProtocolHandler::sendData(float* data,int length,Datapacket* dp){
             if(dp==NULL)
@@ -92,8 +92,8 @@
         }
         void ProtocolHandler::recevice(){
             Datapacket* dp=new Datapacket;
-            this->sh>>dp;
-            this->cod>=dp;
+            *sh>>dp;
+            cod>=dp;
             if (dp->length<2)
                 return;
             if (dp->data[0]==COMMAND)
