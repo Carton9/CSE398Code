@@ -104,7 +104,7 @@
             Datapacket* dp=new Datapacket;
             cout << "TP3.11" << endl;
             *sh>>dp;
-            cout << "TP3.12" << endl;
+            cout << "TP3.12 " << "Packet Size " << dp->length << endl;
             cod>=dp;
             if (dp->length<2)
                 return;
