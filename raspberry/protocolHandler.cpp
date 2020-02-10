@@ -57,20 +57,25 @@
         int ProtocolHandler::receiveFloatData(float* data,Datapacket* dp){
             if(dp==NULL||data==NULL)
                 return -1;
+            cout << "TP3.1" << endl;
             while (DataBuffer.empty()&&CommandBuffer.size()<255)
             {
                 recevice();
             }
+            cout << "TP3.2" << endl;
             if (DataBuffer.empty())
             {
                 return -1;
             }
+            cout << "TP3.3" << endl;
             Datapacket* dpBuffered=DataBuffer[0];
             dp->data=dpBuffered->data;
             dp->length=dpBuffered->length;
+            cout << "TP3.4" << endl;
             DataBuffer.erase(DataBuffer.begin());
             int length=dp->data[1];
             char* pointer=dp->data;
+            cout << "TP3.5" << endl;
             pointer+=2;
             for (int i = 0; i < length; i++)
             {
@@ -78,6 +83,7 @@
                 memcpy(buffer,pointer+4*i,4);
                 data[i]=byteToFloat(buffer);
             }
+            cout << "TP3.6" << endl;
             delete dpBuffered;
             return length;
             
