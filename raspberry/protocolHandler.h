@@ -37,7 +37,7 @@ class ProtocolHandler
         SerialHandler* sh;
         COBHandler cod;
         void recevice();
-        float byteToFloat(char* data);
+        float byteToFloat(unsigned char* data);
         void floatToChar(float value,char* data);
         union BFC{
                 float value;

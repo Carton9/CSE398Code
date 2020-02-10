@@ -52,7 +52,7 @@
         }
         int ProtocolHandler::receiveFloatData(float* data,Datapacket* dp){
             if(dp==NULL||data==NULL)
-                return;
+                return -1;
             while (DataBuffer.empty()&&CommandBuffer.size<255)
             {
                 recevice();
@@ -90,8 +90,8 @@
         }
         void recevice(){
             Datapacket* dp=new Datapacket;
-            sh>>dp;
-            cod>=dp;
+            this->sh>>dp;
+            this->cod>=dp;
             if (dp->length<2)
                 return;
             if (dp->data[0]==COMMAND)
