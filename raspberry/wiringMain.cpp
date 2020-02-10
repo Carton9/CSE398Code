@@ -29,15 +29,15 @@ int main (void)
   while (1){
     cout << "TP2"<< endl;
     ph.sendCommand(REQUEST,dp2);
-    cout << "TP3"<< endl;
-    float dataBuffer[200];
-    int length=ph.receiveFloatData(dataBuffer,dp);
-    cout << "TP4"<< endl;
-    for (int i = 0; i < length; i++)
-    {
-      cout << dataBuffer[i] << " ";
-    }
-    cout << endl;
+    // cout << "TP3"<< endl;
+    // float dataBuffer[200];
+    // int length=ph.receiveFloatData(dataBuffer,dp);
+    // cout << "TP4"<< endl;
+    // for (int i = 0; i < length; i++)
+    // {
+    //   cout << dataBuffer[i] << " ";
+    // }
+    // cout << endl;
   }
   
   return 0 ;
