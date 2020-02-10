@@ -9,13 +9,13 @@
             byte data[2]={COMMAND,command};
             if(dp==NULL)
                 return;
-            cout << "TP2.5";
+            cout << "TP2.5"<<endl;
             memcpy(dp->data,data,2);
             dp->length=2;
-             cout << "TP2.6";
+             cout << "TP2.6"<<endl;
             cod<=dp;
             *sh << dp;
-            cout << "TP2.7";
+            cout << "TP2.7"<<endl;
         }
         void ProtocolHandler::sendData(float* data,int length,Datapacket* dp){
             if(dp==NULL)
