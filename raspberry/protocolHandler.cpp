@@ -33,7 +33,7 @@
         }
         byte ProtocolHandler::receiveCommand(Datapacket* dp){
             if(dp==NULL)
-                return;
+                return -1;
             while (CommandBuffer.empty()&&DataBuffer.size<255)
             {
                 recevice();
@@ -80,7 +80,9 @@
         }
         float ProtocolHandler::byteToFloat(unsigned char* data){
             BFC convertor;
-            convertor.data=data;
+            for(int i = 0; i < 4; i++) {
+                convertor.data[i]=data[i];
+            }
             return convertor.value;
         }
         void ProtocolHandler::floatToChar(float value,char* data){
