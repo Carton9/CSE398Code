@@ -26,7 +26,7 @@ int main (void)
   dp->length=4;
   ProtocolHandler ph(&sh);
   while (1){
-    ph.sendCommand(REQUEST);
+    ph.sendCommand(REQUEST,dp2);
     float dataBuffer[200];
     int length=ph.receiveFloatData(dataBuffer,dp);
     for (int i = 0; i < length; i++)

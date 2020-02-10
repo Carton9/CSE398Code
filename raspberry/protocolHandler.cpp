@@ -29,7 +29,7 @@
             dp->data=packet;
             dp->length=length*4+2;
             cod<=dp;
-            sh << dp;
+            *sh << dp;
         }
         byte ProtocolHandler::receiveCommand(Datapacket* dp){
             if(dp==NULL)
