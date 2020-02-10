@@ -26,9 +26,9 @@ int main (void)
   COBHandler cod;
   ProtocolHandler ph(&sh);
   cout << "TP1"<< endl;
-  // while (1){
-  //   cout << "TP2"<< endl;
-  //   ph.sendCommand(REQUEST,dp2);
+  while (1){
+    cout << "TP2"<< endl;
+    ph.sendCommand(REQUEST,dp2);
   //   cout << "TP3"<< endl;
   //   float dataBuffer[200];
   //   int length=ph.receiveFloatData(dataBuffer,dp);
@@ -38,7 +38,7 @@ int main (void)
   //     cout << dataBuffer[i] << " ";
   //   }
   //   cout << endl;
-  // }
+  }
   
   return 0 ;
 }
