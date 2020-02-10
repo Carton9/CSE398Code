@@ -104,10 +104,11 @@
             Datapacket* dp=new Datapacket;
             cout << "TP3.11" << endl;
             *sh>>dp;
+            cout << "TP3.12" << endl;
             cod>=dp;
             if (dp->length<2)
                 return;
-            cout << "TP3.12" << endl;
+            
             if (dp->data[0]==COMMAND)
             {
                 CommandBuffer.push_back(dp);
