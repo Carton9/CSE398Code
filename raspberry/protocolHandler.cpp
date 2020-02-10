@@ -88,7 +88,7 @@
             convertor.value=value;
             memcpy(data,convertor.data,4);
         }
-        void recevice(){
+        void ProtocolHandler::recevice(){
             Datapacket* dp=new Datapacket;
             this->sh>>dp;
             this->cod>=dp;
