@@ -22,9 +22,9 @@ int main (void)
     cout << "TP0.1";
   Datapacket* dp=new Datapacket;
   Datapacket* dp2=new Datapacket;
-  //     cout << "TP0.2";
-  // COBHandler cod;
-  // cout << "TP1";
+      cout << "TP0.2";
+  COBHandler cod;
+  cout << "TP1";
   // ProtocolHandler ph(&sh);
   // while (1){
   //   cout << "TP2";
