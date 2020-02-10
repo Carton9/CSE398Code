@@ -19,20 +19,20 @@ int main (void)
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
   SerialHandler sh;
-    cout << "TP0.1";
+    cout << "TP0.1"<< endl;
   Datapacket* dp=new Datapacket;
   Datapacket* dp2=new Datapacket;
-      cout << "TP0.2";
+      cout << "TP0.2"<< endl;
   COBHandler cod;
-  cout << "TP1";
-  // ProtocolHandler ph(&sh);
+  ProtocolHandler ph(&sh);
+  cout << "TP1"<< endl;
   // while (1){
-  //   cout << "TP2";
+  //   cout << "TP2"<< endl;
   //   ph.sendCommand(REQUEST,dp2);
-  //   cout << "TP3";
+  //   cout << "TP3"<< endl;
   //   float dataBuffer[200];
   //   int length=ph.receiveFloatData(dataBuffer,dp);
-  //   cout << "TP4";
+  //   cout << "TP4"<< endl;
   //   for (int i = 0; i < length; i++)
   //   {
   //     cout << dataBuffer[i] << " ";
