@@ -6,6 +6,7 @@
 #include <iostream> 
 #include <fstream>
 #include <unistd.h>
+#define byte unsigned char
 class Datapacket
 {
     public:

@@ -14,8 +14,8 @@ class COBHandler
         ~COBHandler(); // unexport all pins opened by this class only
         Datapacket* operator << (float p); 
         float operator << (Datapacket* p); 
-        void operator<= (Datapacket* p);
-        void operator>= (Datapacket* p); 
+        void operator<= (Datapacket* p);//encode
+        void operator>= (Datapacket* p);//decode
     private:
         int fd;
 
