@@ -24,11 +24,15 @@ int main (void)
   COBHandler cod;
   dp->data="test";
   dp->length=4;
+  cout << "TP1";
   ProtocolHandler ph(&sh);
   while (1){
+    cout << "TP2";
     ph.sendCommand(REQUEST,dp2);
+    cout << "TP3";
     float dataBuffer[200];
     int length=ph.receiveFloatData(dataBuffer,dp);
+    cout << "TP4";
     for (int i = 0; i < length; i++)
     {
       cout << dataBuffer[i] << " ";
