@@ -12,7 +12,7 @@
             memcpy(dp->data,data,2);
             dp->length=2;
             cod<=dp;
-            sh << dp;
+            &sh << dp;
         }
         void ProtocolHandler::sendData(float* data,int length,Datapacket* dp){
             if(dp==NULL)
@@ -34,7 +34,7 @@
         byte ProtocolHandler::receiveCommand(Datapacket* dp){
             if(dp==NULL)
                 return -1;
-            while (CommandBuffer.empty()&&DataBuffer.size<255)
+            while (CommandBuffer.empty()&&DataBuffer.size()<255)
             {
                 recevice();
             }
@@ -53,7 +53,7 @@
         int ProtocolHandler::receiveFloatData(float* data,Datapacket* dp){
             if(dp==NULL||data==NULL)
                 return -1;
-            while (DataBuffer.empty()&&CommandBuffer.size<255)
+            while (DataBuffer.empty()&&CommandBuffer.size()<255)
             {
                 recevice();
             }
@@ -78,14 +78,14 @@
             return length;
             
         }
-        float ProtocolHandler::byteToFloat(unsigned char* data){
+        float ProtocolHandler::byteToFloat(byte* data){
             BFC convertor;
             for(int i = 0; i < 4; i++) {
                 convertor.data[i]=data[i];
             }
             return convertor.value;
         }
-        void ProtocolHandler::floatToChar(float value,char* data){
+        void ProtocolHandler::floatToChar(float value,byte* data){
             BFC convertor;
             convertor.value=value;
             memcpy(data,convertor.data,4);
