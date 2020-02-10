@@ -78,11 +78,10 @@
             return length;
             
         }
-        float ProtocolHandler::byteToFloat(char* data){
+        float ProtocolHandler::byteToFloat(unsigned char* data){
             BFC convertor;
             convertor.data=data;
             return convertor.value;
-            
         }
         void ProtocolHandler::floatToChar(float value,char* data){
             BFC convertor;
