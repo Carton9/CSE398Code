@@ -10,6 +10,7 @@
             if(dp==NULL)
                 return;
             cout << "TP2.5"<<endl;
+            dp->data=new char[2];
             memcpy(dp->data,data,2);
             dp->length=2;
              cout << "TP2.6"<<endl;
