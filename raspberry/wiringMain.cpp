@@ -20,13 +20,14 @@ int main (void)
   wiringPiSetup () ;
   SerialHandler sh;
     cout << "TP0.1"<< endl;
-  Datapacket* dp=new Datapacket;
-  Datapacket* dp2=new Datapacket;
+ 
       cout << "TP0.2"<< endl;
   COBHandler cod;
   ProtocolHandler ph(&sh);
   cout << "TP1"<< endl;
   while (1){
+    Datapacket* dp=new Datapacket;
+    Datapacket* dp2=new Datapacket;
     cout << "TP2"<< endl;
     ph.sendCommand(REQUEST,dp2);
     // cout << "TP3"<< endl;
