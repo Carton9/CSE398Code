@@ -43,8 +43,8 @@ int main (void)
     // delete dp£»
     // delete dp2£»
     cod<=dp;
-    sh.send(dp);
-    sh >>dp2;
+    sh<<dp;
+    sh>>dp2;
     if (dp2->length<1)continue;
     cod>=dp2;
     FloatArray fa;
@@ -54,6 +54,7 @@ int main (void)
       cout << fa.array[i] << " ";
     }
     cout << endl;
+    
   }
   
   return 0 ;
