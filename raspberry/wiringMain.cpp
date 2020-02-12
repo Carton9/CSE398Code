@@ -46,8 +46,8 @@ int main (void)
     sh>>dp3;
     if (dp3->length<1)continue;
     cod>=dp3;
-    char keyword[]={0x62,0x75,0x6d,0x70}
-    if (strcmp(dp3->data,keyword)==1)
+    char keyword[]={0x62,0x75,0x6d,0x70};
+    if(strcmp(dp3->data,keyword)==1)
     {
       continue;
     }
