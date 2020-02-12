@@ -62,6 +62,11 @@ void COBHandler::operator<= (Datapacket* p){
             nextIndex=0;
         }
     }
+    for (int i = 0; i < p->length+2; i++)
+    {
+        cout << hex << (uint64_t)data[i] << " ";
+    }
+    cout << endl;
     Datapacket* dp=new Datapacket();
     p->data=data;
     p->length=p->length+2;
