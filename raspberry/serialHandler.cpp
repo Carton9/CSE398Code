@@ -29,7 +29,8 @@ void SerialHandler::operator >>(Datapacket* dp){
        }
     }
     cout << "TP3.112"<<endl;
-    char* frame=(char*)malloc(sizeof(char)*length);
+    // (char*)malloc(sizeof(char)*length)
+    char* frame=new char[length];
     memcpy(frame,buffer,length);
     cout << "TP3.113"<<endl;
     dp->data=frame;

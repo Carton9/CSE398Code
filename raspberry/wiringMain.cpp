@@ -13,7 +13,6 @@ union FloatArray
   float array[10];
   char data[sizeof(float)*10];
 };
-
 int main (void)
 {
   printf ("Raspberry Pi - Gertboard Blink\n") ;
@@ -23,13 +22,15 @@ int main (void)
  
       cout << "TP0.2"<< endl;
   COBHandler cod;
-  ProtocolHandler ph(&sh);
+  // ProtocolHandler ph(&sh);
   cout << "TP1"<< endl;
   while (1){
     Datapacket* dp=new Datapacket;
+    dp->data="test";
+    dp->length=4;
     Datapacket* dp2=new Datapacket;
-    cout << "TP2"<< endl;
-    ph.sendCommand(REQUEST,dp2);
+    // cout << "TP2"<< endl;
+    // ph.sendCommand(REQUEST,dp2);
     // cout << "TP3"<< endl;
     // float dataBuffer[200];
     // int length=ph.receiveFloatData(dataBuffer,dp);
@@ -39,6 +40,20 @@ int main (void)
     //   cout << dataBuffer[i] << " ";
     // }
     // cout << endl;
+    // delete dp£»
+    // delete dp2£»
+    // cod<=dp2;
+    sh << dp;
+    sh >>dp2;
+    if (dp2->length<1)continue;
+    cod>=dp2;
+    FloatArray fa;
+    memcpy(fa.data,dp2->data,40);
+    for (int i = 0; i < 10; i++)
+    {
+      cout << fa.array[i] << " ";
+    }
+    cout << endl;
   }
   
   return 0 ;

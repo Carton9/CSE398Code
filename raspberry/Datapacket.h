@@ -10,6 +10,13 @@
 class Datapacket
 {
     public:
+        Datapacket(){
+            data=new char[4096];
+        }
+        Datapacket(int length){
+            data=new char[length];
+            this->length=length;
+        }
         Datapacket* operator+ (Datapacket* in){
             char newData[in->length+length];
             memcpy(newData,data,length);

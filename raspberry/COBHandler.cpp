@@ -9,7 +9,8 @@ Datapacket* COBHandler::operator << (float p){
     };
     FloatConverter s;
     s.floatNumber=p;
-    char* data=(char*)malloc(sizeof(char)*6);
+    // (char*)malloc(sizeof(char)*6)
+    char* data=new char[6];
     memcpy(data+1,s.array,4);
     int currentIndex=0;
     int nextIndex=0;
@@ -47,7 +48,8 @@ float COBHandler::operator << (Datapacket* p){
     return s.floatNumber;
 }
 void COBHandler::operator<= (Datapacket* p){
-    char* data=(char*)malloc(sizeof(char)*(p->length+2));
+    // (char*)malloc(sizeof(char)*(p->length+2))
+    char* data=new char[(p->length+2)];
     memcpy(data+1,p->data,p->length);
     int currentIndex=0;
     int nextIndex=0;
@@ -76,7 +78,8 @@ void COBHandler::operator>= (Datapacket* p){
         index+=nextIndex;
     }
     cout << "TP3.12" << endl;
-    char* newData=(char*)malloc(sizeof(char)*(p->length-2));
+    // (char*)malloc(sizeof(char)*(p->length-2))
+    char* newData=new char[p->length-2];
     memcpy(newData,rawData+1,p->length-2);
     p->length-=2;
     p->data=newData;

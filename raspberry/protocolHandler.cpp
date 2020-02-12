@@ -16,6 +16,7 @@
              cout << "TP2.6"<<endl;
             cod<=dp;
             *sh << dp;
+            delete[] dp->data;
             cout << "TP2.7"<<endl;
         }
         void ProtocolHandler::sendData(float* data,int length,Datapacket* dp){
@@ -47,9 +48,10 @@
                 return -1;
             }
             Datapacket* dpBuffered=CommandBuffer[0];
-            dp->data=dpBuffered->data;
+            memcpy(dp->data,dpBuffered->data,dpBuffered->length);
             dp->length=dpBuffered->length;
             CommandBuffer.erase(CommandBuffer.begin());
+            delete[] dpBuffered->data;
             delete dpBuffered;
             return dp->data[1];
             
@@ -69,7 +71,7 @@
             }
             cout << "TP3.3" << endl;
             Datapacket* dpBuffered=DataBuffer[0];
-            dp->data=dpBuffered->data;
+            memcpy(dp->data,dpBuffered->data,dpBuffered->length);
             dp->length=dpBuffered->length;
             cout << "TP3.4" << endl;
             DataBuffer.erase(DataBuffer.begin());
@@ -84,6 +86,7 @@
                 data[i]=byteToFloat(buffer);
             }
             cout << "TP3.6" << endl;
+            delete[] dpBuffered->data;
             delete dpBuffered;
             return length;
             
