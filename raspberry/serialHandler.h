@@ -17,6 +17,14 @@ class SerialHandler
     public:
         SerialHandler();
         ~SerialHandler(); // unexport all pins opened by this class only
+        void send(Datapacket* p){
+            serialPuts(fd,p->data);
+            if (p->data[p->length-1]==0)
+            {
+                serialPutchar(fd,'/0');
+            }
+            
+        }
         void operator<< (Datapacket* p); 
         void operator>> (Datapacket* p);
     private:

@@ -43,7 +43,7 @@ int main (void)
     // delete dp£»
     // delete dp2£»
     cod<=dp;
-    sh << dp;
+    sh.send(dp);
     sh >>dp2;
     if (dp2->length<1)continue;
     cod>=dp2;
