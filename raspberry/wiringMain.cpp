@@ -42,7 +42,7 @@ int main (void)
     // cout << endl;
     // delete dp£»
     // delete dp2£»
-    // cod<=dp2;
+    cod<=dp;
     sh << dp;
     sh >>dp2;
     if (dp2->length<1)continue;
