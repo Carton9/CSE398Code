@@ -21,7 +21,7 @@ class SerialHandler
             serialPuts(fd,p->data);
             if (p->data[p->length-1]==0)
             {
-                serialPutchar(fd,'/0');
+                serialPutchar(fd,'\0');
             }
             
         }
