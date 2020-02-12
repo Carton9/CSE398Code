@@ -29,6 +29,7 @@ int main (void)
     dp->data="test";
     dp->length=4;
     Datapacket* dp2=new Datapacket;
+    Datapacket* dp3=new Datapacket;
     // cout << "TP2"<< endl;
     // ph.sendCommand(REQUEST,dp2);
     // cout << "TP3"<< endl;
@@ -42,6 +43,14 @@ int main (void)
     // cout << endl;
     // delete dp£»
     // delete dp2£»
+    sh>>dp3;
+    if (dp3->length<1)continue;
+    cod>=dp3;
+    char keyword[]={0x62,0x75,0x6d,0x70}
+    if (strcmp(dp3->data,keyword)==1)
+    {
+      continue;
+    }
     cod<=dp;
     sh<<dp;
     sh>>dp2;
@@ -54,7 +63,7 @@ int main (void)
       cout << fa.array[i] << " ";
     }
     cout << endl;
-    
+
   }
   
   return 0 ;
