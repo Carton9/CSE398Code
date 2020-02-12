@@ -18,12 +18,12 @@ int main (void)
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
   SerialHandler sh;
-    cout << "TP0.1"<< endl;
+    // cout << "TP0.1"<< endl;
  
-      cout << "TP0.2"<< endl;
+    //   cout << "TP0.2"<< endl;
   COBHandler cod;
   // ProtocolHandler ph(&sh);
-  cout << "TP1"<< endl;
+  // cout << "TP1"<< endl;
   while (1){
     Datapacket* dp=new Datapacket;
     dp->data="test";

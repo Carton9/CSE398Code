@@ -9,15 +9,15 @@
             byte data[2]={COMMAND,command};
             if(dp==NULL)
                 return;
-            cout << "TP2.5"<<endl;
+            // cout << "TP2.5"<<endl;
             dp->data=new char[2];
             memcpy(dp->data,data,2);
             dp->length=2;
-             cout << "TP2.6"<<endl;
+            //  cout << "TP2.6"<<endl;
             cod<=dp;
             *sh << dp;
             delete[] dp->data;
-            cout << "TP2.7"<<endl;
+            // cout << "TP2.7"<<endl;
         }
         void ProtocolHandler::sendData(float* data,int length,Datapacket* dp){
             if(dp==NULL)
@@ -105,9 +105,9 @@
         }
         void ProtocolHandler::recevice(){
             Datapacket* dp=new Datapacket;
-            cout << "TP3.11" << endl;
+            // cout << "TP3.11" << endl;
             *sh>>dp;
-            cout << "TP3.12 " << "Packet Size " << dp->length << endl;
+            // cout << "TP3.12 " << "Packet Size " << dp->length << endl;
             cod>=dp;
             for (int i = 0; i < dp->length; i++){
                 cout << hex << (uint)dp->data[i] << " ";

@@ -5,7 +5,7 @@ SerialHandler::SerialHandler(){
 }
 void SerialHandler::operator << (Datapacket* p){
     // serialFlush(fd);
-    serialPuts(fd,p->data);
+    send(p);
     // serialFlush(fd);
 }
 void SerialHandler::operator >>(Datapacket* dp){
@@ -13,7 +13,7 @@ void SerialHandler::operator >>(Datapacket* dp){
     // while (length==0)length=serialDataAvail(fd);
     // dp->data=new char[length];
     // read(fd,dp->data,length);
-    cout << "TP3.111"<<endl;
+    // cout << "TP3.111"<<endl;
     char buffer[40960];
     int isBegin=0;
     while (1)
@@ -28,11 +28,11 @@ void SerialHandler::operator >>(Datapacket* dp){
             }
        }
     }
-    cout << "TP3.112"<<endl;
+    // cout << "TP3.112"<<endl;
     // (char*)malloc(sizeof(char)*length)
     char* frame=new char[length];
     memcpy(frame,buffer,length);
-    cout << "TP3.113"<<endl;
+    // cout << "TP3.113"<<endl;
     dp->data=frame;
     dp->length=length;
 }

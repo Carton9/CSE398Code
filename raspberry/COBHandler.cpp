@@ -72,7 +72,7 @@ void COBHandler::operator<= (Datapacket* p){
     p->length=p->length+2;
 }
 void COBHandler::operator>= (Datapacket* p){
-   cout << "TP3.12" << endl;
+//    cout << "TP3.12" << endl;
     char* rawData=p->data;
     int index=0;
     int nextIndex=0;
@@ -82,11 +82,11 @@ void COBHandler::operator>= (Datapacket* p){
         rawData[index]=0;
         index+=nextIndex;
     }
-    cout << "TP3.12" << endl;
+    // cout << "TP3.12" << endl;
     // (char*)malloc(sizeof(char)*(p->length-2))
     char* newData=new char[p->length-2];
     memcpy(newData,rawData+1,p->length-2);
     p->length-=2;
     p->data=newData;
-    cout << "TP3.13" << endl;
+    // cout << "TP3.13" << endl;
 } 
