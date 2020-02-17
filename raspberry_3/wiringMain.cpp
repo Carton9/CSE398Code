@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include "Adafruit_PWMServoDriver.h"
 using namespace std;
-#define SERVOMIN  150 // This is the 'minimum' pulse length count (out of 4096)
+#define SERVOMIN  200 // This is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
 #define USMIN  600 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 150
 #define USMAX  2400 // This is the rounded 'maximum' microsecond length based on the maximum pulse of 600
@@ -31,6 +31,9 @@ int main (void)
    {
     for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
       pwm.setPWM(0, 0, pulselen);
+    }
+    for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
+      pwm.setPWM(1, 0, pulselen);
     }
    }
    
