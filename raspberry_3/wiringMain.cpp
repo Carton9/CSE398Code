@@ -6,6 +6,7 @@
 #include <wiringSerial.h>
 #include <wiringPiI2C.h>
 #include <unistd.h>
+using namespace std;
 union FloatArray
 {
   float array[10];
@@ -15,7 +16,7 @@ int main (void)
 {
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
-  int fd=routingPiI2CSetup(0x70);
+  int fd=wiringPiI2CSetup(0x70);
   cout << fd;
   return 0 ;
 }
