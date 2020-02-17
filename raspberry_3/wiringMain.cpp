@@ -23,7 +23,7 @@ int main (void)
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
   // int fd=wiringPiI2CSetup(0x70);
-  Adafruit_PWMServoDriver pwm(0x70);
+  Adafruit_PWMServoDriver pwm(0x40);
   pwm.begin();
   pwm.setOscillatorFrequency(27000000);
    pwm.setPWMFreq(SERVO_FREQ);
