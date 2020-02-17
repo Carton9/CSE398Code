@@ -29,14 +29,14 @@ int main (void)
   int rise[3]={420,400,250};
    while (1)
    {
-    // int value;
-    // cin >>value;
-    for (int i = 0; i < 3; i++)
-    {
-      pwm.setPWM(0, 0, turn[1]);
-      pwm.setPWM(1, 0, rise[1]);
+    int value;
+    cin >>value;
+    // for (int i = 0; i < 3; i++)
+    // {
+      pwm.setPWM(0, 0, turn[value]);
+      pwm.setPWM(1, 0, rise[value]);
       usleep(500*1000);
-    }
+    // }
     
     
    }
