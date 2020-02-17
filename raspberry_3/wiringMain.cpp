@@ -27,12 +27,10 @@ int main (void)
    pwm.setPWMFreq(SERVO_FREQ);
    while (1)
    {
-    for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
-      pwm.setPWM(0, 0, pulselen);
-    }
-    for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
-      pwm.setPWM(1, 0, pulselen);
-    }
+    int value;
+    cin >>value
+    pwm.setPWM(0, 0, value);
+    usleep(500*1000);
    }
    
    
