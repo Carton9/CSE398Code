@@ -15,7 +15,7 @@ int main (void)
 {
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
-  int fd=routingPiI2CSetup£¨0x70);
+  int fd=routingPiI2CSetup(0x70);
   cout << fd;
   return 0 ;
 }
