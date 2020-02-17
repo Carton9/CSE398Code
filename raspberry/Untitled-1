@@ -1,0 +1,3 @@
+
+int mask=0xaa<<8|0xaa`
+return (input&mask^mask)|((input>>16)&mask^mask)
