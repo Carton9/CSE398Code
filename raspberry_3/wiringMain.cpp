@@ -33,8 +33,8 @@ int main (void)
     // cin >>value;
     for (int i = 0; i < 3; i++)
     {
-      pwm.setPWM(0, 0, turn[i]);
-      pwm.setPWM(1, 0, rise[i]);
+      pwm.setPWM(0, 0, turn[1]);
+      pwm.setPWM(1, 0, rise[1]);
       usleep(500*1000);
     }
     
