@@ -26,7 +26,7 @@ int main (void)
   pwm.setOscillatorFrequency(27000000);
   pwm.setPWMFreq(SERVO_FREQ);
   int turn[3]={460,300,130};
-  int rise[3]={420,400,250}
+  int rise[3]={420,400,250};
    while (1)
    {
     // int value;
