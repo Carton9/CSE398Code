@@ -209,15 +209,10 @@ void Adafruit_PWMServoDriver::setPWM(uint8_t num, uint16_t on, uint16_t off) {
 
   // _i2c->beginTransmission(_i2caddr);
   // _i2c->write(PCA9685_LED0_ON_L + 4 * num);
-  wiringPiI2CWrite(_i2c,PCA9685_LED0_ON_L + 4 * num);
-  // wiringPiI2CWriteReg16 (_i2c, PCA9685_LED0_ON_L + 4 * num, on) ;
-    wiringPiI2CWrite(_i2c,on);
-    wiringPiI2CWrite(_i2c,on>>8);
-    wiringPiI2CWrite(_i2c,off);
-    wiringPiI2CWrite(_i2c,off>>8);
+  wiringPiI2CWriteReg16 (_i2c, PCA9685_LED0_ON_L + 4 * num, on) ;
   // _i2c->write(on);
   // _i2c->write(on >> 8);
-  // wiringPiI2CWriteReg16 (_i2c, PCA9685_LED0_OFF_L + 4 * num+1, off) ;
+  wiringPiI2CWriteReg16 (_i2c, PCA9685_LED0_OFF_L + 4 * num, off) ;
   // _i2c->write(off);
   // _i2c->write(off >> 8);
   // _i2c->endTransmission();
