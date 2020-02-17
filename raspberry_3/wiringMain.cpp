@@ -24,13 +24,21 @@ int main (void)
   Adafruit_PWMServoDriver pwm(0x40);
   pwm.begin();
   pwm.setOscillatorFrequency(27000000);
-   pwm.setPWMFreq(SERVO_FREQ);
+  pwm.setPWMFreq(SERVO_FREQ);
+  int turn[3]={460,300,130};
+  int rise[3]={420,400,250}
    while (1)
    {
-    int value;
-    cin >>value;
-    pwm.setPWM(0, 0, value);
-    usleep(500*1000);
+    // int value;
+    // cin >>value;
+    for (int i = 0; i < 3; i++)
+    {
+      pwm.setPWM(0, 0, turn[i]);
+      pwm.setPWM(1, 0, rise[i]);
+      usleep(500*1000);
+    }
+    
+    
    }
    
    
