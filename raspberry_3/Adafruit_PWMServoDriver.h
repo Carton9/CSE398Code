@@ -26,6 +26,7 @@
 // #include <Arduino.h>
 // #include <Wire.h>
 #include <wiringPiI2C.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <cstdlib>
 #include <iostream> 
