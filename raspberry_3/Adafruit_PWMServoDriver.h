@@ -26,6 +26,10 @@
 // #include <Arduino.h>
 // #include <Wire.h>
 #include <wiringPiI2C.h>
+#include <stdio.h>
+#include <cstdlib>
+#include <iostream> 
+#include <fstream>
 
 // REGISTER ADDRESSES
 #define PCA9685_MODE1 0x00      /**< Mode Register 1 */
