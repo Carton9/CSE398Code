@@ -30,7 +30,7 @@ int main (void)
    while (1)
    {
     for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
-      pwm.setPWM(servonum, 0, pulselen);
+      pwm.setPWM(0, 0, pulselen);
     }
    }
    

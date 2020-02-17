@@ -55,7 +55,7 @@ Adafruit_PWMServoDriver::Adafruit_PWMServoDriver(const uint8_t addr){
  *          Sets External Clock (Optional)
  */
 void Adafruit_PWMServoDriver::begin(uint8_t prescale) {
-  _i2c=wiringPiI2CSetup(addr);
+  _i2c=wiringPiI2CSetup(_i2caddr);
   reset();
   if (prescale) {
     setExtClk(prescale);
@@ -72,7 +72,7 @@ void Adafruit_PWMServoDriver::begin(uint8_t prescale) {
  */
 void Adafruit_PWMServoDriver::reset() {
   write8(PCA9685_MODE1, MODE1_RESTART);
-  delay(10);
+  usleep(10*1000);
 }
 
 /*!
@@ -82,7 +82,7 @@ void Adafruit_PWMServoDriver::sleep() {
   uint8_t awake = read8(PCA9685_MODE1);
   uint8_t sleep = awake | MODE1_SLEEP; // set sleep bit high
   write8(PCA9685_MODE1, sleep);
-  delay(5); // wait until cycle ends for sleep to be active
+  usleep(5*1000); // wait until cycle ends for sleep to be active
 }
 
 /*!
@@ -110,7 +110,7 @@ void Adafruit_PWMServoDriver::setExtClk(uint8_t prescale) {
 
   write8(PCA9685_PRESCALE, prescale); // set the prescaler
 
-  delay(5);
+  usleep(5*1000);
   // clear the SLEEP bit to start
   write8(PCA9685_MODE1, (newmode & ~MODE1_SLEEP) | MODE1_RESTART | MODE1_AI);
 
@@ -148,7 +148,7 @@ void Adafruit_PWMServoDriver::setPWMFreq(float freq) {
   write8(PCA9685_MODE1, newmode);                             // go to sleep
   write8(PCA9685_PRESCALE, prescale); // set the prescaler
   write8(PCA9685_MODE1, oldmode);
-  delay(5);
+  usleep(5*1000);
   // This sets the MODE1 register to turn on auto increment.
   write8(PCA9685_MODE1, oldmode | MODE1_RESTART | MODE1_AI);
 
@@ -228,6 +228,10 @@ void Adafruit_PWMServoDriver::setPWM(uint8_t num, uint16_t on, uint16_t off) {
  * from 0 to 4095 inclusive.
  *   @param  invert If true, inverts the output, defaults to 'false'
  */
+uint16_t min(uint16_t a,uint16_t b){
+  if(a<b)return a;
+  return b;
+}
 void Adafruit_PWMServoDriver::setPin(uint8_t num, uint16_t val, bool invert) {
   // Clamp value between 0 and 4095 inclusive.
   val = min(val, (uint16_t)4095);
