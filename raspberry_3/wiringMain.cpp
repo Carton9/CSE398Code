@@ -28,7 +28,7 @@ int main (void)
    while (1)
    {
     int value;
-    cin >>value
+    cin >>value;
     pwm.setPWM(0, 0, value);
     usleep(500*1000);
    }
