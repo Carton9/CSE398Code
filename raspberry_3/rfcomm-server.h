@@ -2,11 +2,10 @@
 #define __RFCOMM_SERVER_H
 #include <stdio.h>
 #include <string>
-#include <iostream> 
 #include <sys/socket.h>
 #include "bluetooth.h"
 #include "rfcomm.h"
-using namespace std;
+// using namespace std;
 class rfcomm_server
 {
 private:
@@ -30,12 +29,13 @@ public:
 
         // put socket into listening mode
         listen(server, 1);
-        cout << "TP0.2 " << server << endl;
+        // cout << "TP0.2 " << server << endl;
         // // accept one connection
         // while (client==-1)
         // {
              client = accept(server, (struct sockaddr *)&rem_addr, &opt);
-             cout << "TP0.1 " << client << endl;
+             printf("TP01%d",client);
+            //  cout << "TP0.1 " << client << endl;
         // }
        ba2str( &rem_addr.rc_bdaddr, buf );
         
@@ -44,12 +44,12 @@ public:
         close(client);
         close(server);
     }
-    rfcomm_server& operator<<(string s){
+    rfcomm_server& operator<<(std::string s){
         write(client,s.c_str(),s.size());
         write(client,"\n",1);
         return *this;
     }
-    rfcomm_server& operator>>(string& s){
+    rfcomm_server& operator>>(std::string& s){
         char buf[1024] = { 0 };
         int bytes_read=-1;
         while (bytes_read==-1)
