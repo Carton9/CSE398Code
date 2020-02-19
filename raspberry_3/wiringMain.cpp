@@ -30,6 +30,9 @@ int main (void)
   int rise[3]={420,400,250};
   rfcomm_server rout;
   rout<< "good news";
+  string goodone;
+  rout >> goodone;
+  cout << goodone;
   //  while (1)
   //  {
   //   int value;
