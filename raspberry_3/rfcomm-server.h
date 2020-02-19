@@ -43,6 +43,7 @@ public:
     }
     rfcomm_server& operator<<(string s){
         write(client,s.c_str(),s.size());
+        write(client,"\n",1);
         return *this;
     }
     rfcomm_server& operator>>(string& s){
