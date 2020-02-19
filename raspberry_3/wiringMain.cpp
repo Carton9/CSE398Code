@@ -49,19 +49,16 @@ int main (void)
     }
     if (goodone=="LF")
     {
-          // for (int i = 0; i < 3; i++)
-    // {
       pwm.setPWM(0, 0, turn[0]);
       pwm.setPWM(1, 0, rise[0]);
       usleep(500*1000);
-    // }
     }
     if (goodone=="OF")
     {
           // for (int i = 0; i < 3; i++)
     // {
        rout.closeServer();
-       exit();
+       return 0;
     // }
     }
   }
