@@ -35,6 +35,8 @@ int main (void)
   
   cout << "TP2" << endl;
   cout << goodone<< endl;
+  pwm.setPWM(0, 0, turn[0]);
+  pwm.setPWM(1, 0, rise[0]);
   for (int i = 0; i < 5; i++)
   {
     rout >> goodone;
@@ -55,11 +57,8 @@ int main (void)
     }
     if (goodone=="OF")
     {
-          // for (int i = 0; i < 3; i++)
-    // {
        rout.closeServer();
        return 0;
-    // }
     }
   }
   
