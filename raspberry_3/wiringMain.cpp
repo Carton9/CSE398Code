@@ -32,20 +32,46 @@ int main (void)
   rout<< "good news";
   string goodone;
   cout << "TP1" << endl;
-  rout >> goodone;
+  
   cout << "TP2" << endl;
   cout << goodone<< endl;
+  for (int i = 0; i < 5; i++)
+  {
+    rout >> goodone;
+    if (goodone=="MD")
+    {
+          // for (int i = 0; i < 3; i++)
+    // {
+      pwm.setPWM(0, 0, turn[1]);
+      pwm.setPWM(1, 0, rise[1]);
+      usleep(500*1000);
+    // }
+    }
+    if (goodone=="LF")
+    {
+          // for (int i = 0; i < 3; i++)
+    // {
+      pwm.setPWM(0, 0, turn[0]);
+      pwm.setPWM(1, 0, rise[0]);
+      usleep(500*1000);
+    // }
+    }
+    if (goodone=="OF")
+    {
+          // for (int i = 0; i < 3; i++)
+    // {
+       rout.closeServer();
+       exit();
+    // }
+    }
+  }
+  
   rout.closeServer();
   //  while (1)
   //  {
   //   int value;
   //   cin >>value;
-  //   // for (int i = 0; i < 3; i++)
-  //   // {
-  //     pwm.setPWM(0, 0, turn[value]);
-  //     pwm.setPWM(1, 0, rise[value]);
-  //     usleep(500*1000);
-  //   // }
+
     
     
   //  }
