@@ -32,22 +32,19 @@ int main (void)
   rout<< "good news";
   string goodone;
   cout << "TP1" << endl;
-  
   cout << "TP2" << endl;
-  cout << goodone<< endl;
+  // cout << goodone<< endl;
   pwm.setPWM(0, 0, turn[0]);
   pwm.setPWM(1, 0, rise[0]);
   for (int i = 0; i < 5; i++)
   {
     rout >> goodone;
+    cout << goodone << endl;
     if (goodone=="MD")
     {
-          // for (int i = 0; i < 3; i++)
-    // {
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
       usleep(500*1000);
-    // }
     }
     if (goodone=="LF")
     {
