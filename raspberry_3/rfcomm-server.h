@@ -2,10 +2,7 @@
 #define __RFCOMM_SERVER_H
 #include <stdio.h>
 #include <string>
-#include <cstdlib>
 #include <iostream> 
-#include <fstream>
-#include <unistd.h>
 #include <sys/socket.h>
 #include "bluetooth.h"
 #include "rfcomm.h"
