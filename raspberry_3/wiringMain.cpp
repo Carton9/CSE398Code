@@ -41,20 +41,20 @@ int main (void)
     rout >> goodone;
     
     cout <<goodone.size()<<endl;
-    if (goodone.compare("MD\n")==0)
+    if (goodone[0]='M')
     {
       cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
       usleep(500*1000);
     }
-    if (goodone=="LF")
+    if (goodone[0]=='L')
     {
       pwm.setPWM(0, 0, turn[0]);
       pwm.setPWM(1, 0, rise[0]);
       usleep(500*1000);
     }
-    if (goodone=="OF")
+    if (goodone[0]=='O')
     {
        rout.closeServer();
        return 0;
