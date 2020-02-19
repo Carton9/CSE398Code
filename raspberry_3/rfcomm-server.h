@@ -13,8 +13,8 @@ using namespace std;
 class rfcomm_server
 {
 private:
-    int client;
-    int server;
+    int client=-1;
+    int server=-1;
 public:
     rfcomm_server(){
         struct sockaddr_rc loc_addr = { 0 }, rem_addr = { 0 };
