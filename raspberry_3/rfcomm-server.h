@@ -33,10 +33,10 @@ public:
 
         // put socket into listening mode
         listen(server, 1);
-
+        cout << "TP0.2 " << server << endl;
         // accept one connection
         client = accept(server, (struct sockaddr *)&rem_addr, &opt);
-        cout << "TP0.1" << client << endl;
+        cout << "TP0.1 " << client << endl;
     }
     ~rfcomm_server(){
         close(client);
