@@ -30,7 +30,7 @@ int main (void)
   int rise[3]={420,400,250};
   rfcomm_server rout;
   rout<< "good news";
-  string goodone;
+  
   cout << "TP1" << endl;
   cout << "TP2" << endl;
   // cout << goodone<< endl;
@@ -38,6 +38,7 @@ int main (void)
   pwm.setPWM(1, 0, rise[0]);
   for (int i = 0; i < 5; i++)
   {
+    string goodone="";
     rout >> goodone;
     
     cout <<goodone.size()<<endl;
