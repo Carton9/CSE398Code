@@ -41,7 +41,7 @@ int main (void)
     // string* goodone=new string;
     // rout >> goodone;
     string goodone=rout.readRF();
-    cout <<goodone.size<<endl;
+    cout <<goodone.size()<<endl;
     cout << goodone << endl;
     if ((goodone)[0]='M')
     {
