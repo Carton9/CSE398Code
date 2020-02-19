@@ -42,6 +42,7 @@ int main (void)
     cout << goodone << endl;
     if (goodone=="MD")
     {
+      cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
       usleep(500*1000);
