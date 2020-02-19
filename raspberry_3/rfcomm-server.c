@@ -1,5 +1,5 @@
 //run this command: sudo apt-get install libbluetooth-dev
-//compile gcc -o rfcomm-server rfcomm-server.c lbluetooth
+//compile gcc -o rfcomm-server rfcomm-server.c -lbluetooth
 
 #include <stdio.h>
 #include <unistd.h>

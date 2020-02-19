@@ -1,16 +1,16 @@
-#include <stdio.h>
-#include <cstdlib>
-#include <iostream> 
-#include <fstream>
-#include <wiringPi.h>
-#include <wiringSerial.h>
-#include <wiringPiI2C.h>
-#include <unistd.h>
-#include "Adafruit_PWMServoDriver.h"
-using namespace std;
-#define SERVOMIN  500 // This is the 'minimum' pulse length count (out of 4096)
-#define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
-#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
+// #include <stdio.h>
+// #include <cstdlib>
+// #include <iostream> 
+// #include <fstream>
+// #include <wiringPi.h>
+// #include <wiringSerial.h>
+// #include <wiringPiI2C.h>
+// #include <unistd.h>
+// #include "Adafruit_PWMServoDriver.h"
+// using namespace std;
+// #define SERVOMIN  500 // This is the 'minimum' pulse length count (out of 4096)
+// #define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
+// #define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
 // union FloatArray
 // {
 //   float array[10];
