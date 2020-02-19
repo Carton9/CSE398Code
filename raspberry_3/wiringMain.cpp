@@ -43,7 +43,7 @@ int main (void)
     for(int i=0;i<goodone.size();i++){
       cout << hex << data[i];
     }
-    cout << endl;
+    cout <<goodone.size()<<endl;
     if (goodone.compare("MD\n")==0)
     {
       cout << "TP3" << endl;
