@@ -49,13 +49,13 @@ int main (void)
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
     }
-    elseif ((goodone)[0]=='L')
+    else if ((goodone)[0]=='L')
     {
       cout << "TP4" << endl;
       pwm.setPWM(0, 0, turn[0]);
       pwm.setPWM(1, 0, rise[0]);
     }
-    if ((goodone)[0]=='O')
+    else if ((goodone)[0]=='O')
     {
       cout << "TP5" << endl;
        rout.closeServer();
