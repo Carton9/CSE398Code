@@ -1,58 +1,58 @@
-#include <stdio.h>
-#include <cstdlib>
-#include <iostream> 
-#include <fstream>
-#include <wiringPi.h>
-#include <wiringSerial.h>
-#include <wiringPiI2C.h>
-#include <unistd.h>
-#include "Adafruit_PWMServoDriver.h"
-#include "rfcomm-server.h"
-using namespace std;
-#define SERVOMIN  500 // This is the 'minimum' pulse length count (out of 4096)
-#define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
-#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
-union FloatArray
-{
-  float array[10];
-  char data[sizeof(float)*10];
-};
-int main (void)
-{
-  printf ("Raspberry Pi - Gertboard Blink\n") ;
-  wiringPiSetup () ;
-  // int fd=wiringPiI2CSetup(0x70);
-  Adafruit_PWMServoDriver pwm(0x40);
-  pwm.begin();
-  pwm.setOscillatorFrequency(27000000);
-  pwm.setPWMFreq(SERVO_FREQ);
-  int turn[3]={460,300,130};
-  int rise[3]={420,400,250};
-  rfcomm_server rout;
-  rout<< "good news";
-  string goodone;
-  cout << "TP1" << endl;
-  rout >> goodone;
-  cout << "TP2" << endl;
-  cout << goodone<< endl;
-  //  while (1)
-  //  {
-  //   int value;
-  //   cin >>value;
-  //   // for (int i = 0; i < 3; i++)
-  //   // {
-  //     pwm.setPWM(0, 0, turn[value]);
-  //     pwm.setPWM(1, 0, rise[value]);
-  //     usleep(500*1000);
-  //   // }
+// #include <stdio.h>
+// #include <cstdlib>
+// #include <iostream> 
+// #include <fstream>
+// #include <wiringPi.h>
+// #include <wiringSerial.h>
+// #include <wiringPiI2C.h>
+// #include <unistd.h>
+// #include "Adafruit_PWMServoDriver.h"
+// #include "rfcomm-server.h"
+// using namespace std;
+// #define SERVOMIN  500 // This is the 'minimum' pulse length count (out of 4096)
+// #define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
+// #define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
+// union FloatArray
+// {
+//   float array[10];
+//   char data[sizeof(float)*10];
+// };
+// int main (void)
+// {
+//   printf ("Raspberry Pi - Gertboard Blink\n") ;
+//   wiringPiSetup () ;
+//   // int fd=wiringPiI2CSetup(0x70);
+//   Adafruit_PWMServoDriver pwm(0x40);
+//   pwm.begin();
+//   pwm.setOscillatorFrequency(27000000);
+//   pwm.setPWMFreq(SERVO_FREQ);
+//   int turn[3]={460,300,130};
+//   int rise[3]={420,400,250};
+//   rfcomm_server rout;
+//   rout<< "good news";
+//   string goodone;
+//   cout << "TP1" << endl;
+//   rout >> goodone;
+//   cout << "TP2" << endl;
+//   cout << goodone<< endl;
+//   //  while (1)
+//   //  {
+//   //   int value;
+//   //   cin >>value;
+//   //   // for (int i = 0; i < 3; i++)
+//   //   // {
+//   //     pwm.setPWM(0, 0, turn[value]);
+//   //     pwm.setPWM(1, 0, rise[value]);
+//   //     usleep(500*1000);
+//   //   // }
     
     
-  //  }
+//   //  }
    
    
-  // cout << fd;
-  return 0 ;
-}
+//   // cout << fd;
+//   return 0 ;
+// }
 
 
 
