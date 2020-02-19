@@ -48,8 +48,13 @@ public:
     }
     rfcomm_server& operator>>(string& s){
         char buf[1024] = { 0 };
-        memset(buf, 0, sizeof(buf));
-        int bytes_read = read(client, buf, sizeof(buf));
+        int bytes_read=-1;
+        while (bytes_read==-1)
+        {
+            memset(buf, 0, sizeof(buf));
+            bytes_read= read(client, buf, sizeof(buf));
+        }
+        
         cout << "tp1.1 " <<bytes_read << endl;
         s=string(buf,bytes_read);
         return *this;
