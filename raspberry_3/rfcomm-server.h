@@ -37,7 +37,7 @@ public:
              client = accept(server, (struct sockaddr *)&rem_addr, &opt);
              cout << "TP0.1 " << client << endl;
         // }
-       
+       ba2str( &rem_addr.rc_bdaddr, buf );
         
     }
     ~rfcomm_server(){
