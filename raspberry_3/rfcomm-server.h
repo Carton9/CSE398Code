@@ -58,8 +58,8 @@ public:
             bytes_read= read(client, buf, sizeof(buf));
         }
         
-        cout << "tp1.1 " <<bytes_read << endl;
-        s=string(buf,bytes_read);
+        // cout << "tp1.1 " <<bytes_read << endl;
+        s=std::string(buf,bytes_read);
         return *this;
     }
 };
