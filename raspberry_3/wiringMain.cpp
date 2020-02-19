@@ -39,8 +39,8 @@ int main (void)
   for (int i = 0; i < 5; i++)
   {
     rout >> goodone;
-    cout << goodone << endl;
-    if (goodone.compare("MD")==0)
+    cout << goodone << goodone.compare("MD\n") << endl;
+    if (goodone.compare("MD\n")==0)
     {
       cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
