@@ -50,6 +50,7 @@ public:
         char buf[1024] = { 0 };
         memset(buf, 0, sizeof(buf));
         int bytes_read = read(client, buf, sizeof(buf));
+        cout << "tp1.1 " <<bytes_read << endl;
         s=string(buf,bytes_read);
         return *this;
     }
