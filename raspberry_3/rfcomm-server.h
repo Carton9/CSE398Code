@@ -52,7 +52,7 @@ public:
         write(client,"\n",1);
         return *this;
     }
-    rfcomm_server& operator>>(std::string& s){
+    rfcomm_server& operator>>(std::string* s){
         char buf[1024] = { 0 };
         int bytes_read=-1;
         while (bytes_read==-1)
@@ -62,7 +62,8 @@ public:
         }
         
         // cout << "tp1.1 " <<bytes_read << endl;
-        s=std::string(buf,bytes_read);
+        s->append(buf);
+        
         return *this;
     }
     void closeServer(){

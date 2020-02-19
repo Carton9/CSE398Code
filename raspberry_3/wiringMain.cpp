@@ -38,10 +38,11 @@ int main (void)
   pwm.setPWM(1, 0, rise[0]);
   for (int i = 0; i < 5; i++)
   {
-    string goodone="";
+    string* goodone=new string;
     rout >> goodone;
     
     cout <<goodone.size()<<endl;
+    cout << goodone << endl;
     if (goodone[0]='M')
     {
       cout << "TP3" << endl;
@@ -58,6 +59,7 @@ int main (void)
        rout.closeServer();
        return 0;
     }
+    delete goodone;
   }
   
   rout.closeServer();
