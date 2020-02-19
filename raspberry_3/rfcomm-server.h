@@ -5,7 +5,10 @@
 #include <sys/socket.h>
 #include "bluetooth.h"
 #include "rfcomm.h"
-// using namespace std;
+#include <cstdlib>
+#include <iostream> 
+#include <fstream>
+using namespace std;
 class rfcomm_server
 {
 private:
