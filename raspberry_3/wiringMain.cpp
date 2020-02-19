@@ -43,18 +43,18 @@ int main (void)
     
     cout <<goodone.size()<<endl;
     cout << goodone << endl;
-    if (goodone[0]='M')
+    if ((*goodone)[0]='M')
     {
       cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
     }
-    if (goodone[0]=='L')
+    if ((*goodone)[0]=='L')
     {
       pwm.setPWM(0, 0, turn[0]);
       pwm.setPWM(1, 0, rise[0]);
     }
-    if (goodone[0]=='O')
+    if ((*goodone)[0]=='O')
     {
        rout.closeServer();
        return 0;
