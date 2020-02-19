@@ -40,7 +40,7 @@ int main (void)
   {
     rout >> goodone;
     cout << goodone << endl;
-    if (goodone=="MD")
+    if (goodone.compare("MD")==0)
     {
       cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
