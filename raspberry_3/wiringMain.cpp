@@ -31,8 +31,10 @@ int main (void)
   rfcomm_server rout;
   rout<< "good news";
   string goodone;
+  cout << "TP1" << endl;
   rout >> goodone;
-  cout << goodone;
+  cout << "TP2" << endl;
+  cout << goodone<< endl;
   //  while (1)
   //  {
   //   int value;
