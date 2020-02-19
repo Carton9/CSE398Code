@@ -65,7 +65,7 @@ public:
         s=std::string(buf,bytes_read);
         return *this;
     }
-    void close(){
+    void closeServer(){
          close(client);
         close(server);
     }

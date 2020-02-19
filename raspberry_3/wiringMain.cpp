@@ -35,7 +35,7 @@ int main (void)
   rout >> goodone;
   cout << "TP2" << endl;
   cout << goodone<< endl;
-  ~rout();
+  rout.closeServer();
   //  while (1)
   //  {
   //   int value;
