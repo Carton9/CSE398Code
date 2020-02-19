@@ -39,7 +39,7 @@ int main (void)
   for (int i = 0; i < 5; i++)
   {
     rout >> goodone;
-    cout << goodone << goodone.compare("MD\n") << endl;
+    cout << hex << goodone.c_str() << endl;
     if (goodone.compare("MD\n")==0)
     {
       cout << "TP3" << endl;
