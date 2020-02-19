@@ -66,6 +66,18 @@ public:
         
         return *this;
     }
+    string readRF(){
+        char buf[1024] = { 0 };
+        int bytes_read=-1;
+        while (bytes_read==-1)
+        {
+            memset(buf, 0, sizeof(buf));
+            bytes_read= read(client, buf, sizeof(buf));
+        }
+        
+        // cout << "tp1.1 " <<bytes_read << endl;
+        return string(buf);
+    }
     void closeServer(){
          close(client);
         close(server);
