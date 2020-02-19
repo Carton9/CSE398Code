@@ -42,20 +42,22 @@ int main (void)
     // rout >> goodone;
     string goodone=rout.readRF();
     cout <<goodone.size()<<endl;
-    cout << goodone << endl;
-    if ((goodone)[0]='M')
+    cout << goodone.substr(0,2) << endl;
+    if ((goodone)[0]=='M')
     {
       cout << "TP3" << endl;
       pwm.setPWM(0, 0, turn[1]);
       pwm.setPWM(1, 0, rise[1]);
     }
-    if ((goodone)[0]=='L')
+    elseif ((goodone)[0]=='L')
     {
+      cout << "TP4" << endl;
       pwm.setPWM(0, 0, turn[0]);
       pwm.setPWM(1, 0, rise[0]);
     }
     if ((goodone)[0]=='O')
     {
+      cout << "TP5" << endl;
        rout.closeServer();
        return 0;
     }
