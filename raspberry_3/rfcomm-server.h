@@ -36,6 +36,7 @@ public:
 
         // accept one connection
         client = accept(server, (struct sockaddr *)&rem_addr, &opt);
+        cout << "TP0.1" << client << endl;
     }
     ~rfcomm_server(){
         close(client);
