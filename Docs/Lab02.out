@@ -1,0 +1,53 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Boot and display the Beaglebone Desktop GUI}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Setup}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Procedure}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Result}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Boot and display the RPi Desktop}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Setup}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Procedure}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Result}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Arduino serial port}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Setup}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Procedure}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Result}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Flip a bit test on RPi}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Setup}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Procedure}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.3}{Result}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Send serial data to and from RPi from Arduino}{}% 18
+\BOOKMARK [2][-]{subsection.6.1}{Setup}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.2}{Procedure}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.3}{Result}{section.6}% 21
+\BOOKMARK [1][-]{section.7}{Send a single float in COBS format out Arduino}{}% 22
+\BOOKMARK [2][-]{subsection.7.1}{Setup}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.2}{Procedure}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.3}{Result}{section.7}% 25
+\BOOKMARK [1][-]{section.8}{Send a single float in COBS format, A to RPi}{}% 26
+\BOOKMARK [2][-]{subsection.8.1}{Setup}{section.8}% 27
+\BOOKMARK [2][-]{subsection.8.2}{Procedure}{section.8}% 28
+\BOOKMARK [2][-]{subsection.8.3}{Result}{section.8}% 29
+\BOOKMARK [1][-]{section.9}{Send a float array in COBS format, A to RPi}{}% 30
+\BOOKMARK [2][-]{subsection.9.1}{Setup}{section.9}% 31
+\BOOKMARK [2][-]{subsection.9.2}{Procedure}{section.9}% 32
+\BOOKMARK [2][-]{subsection.9.3}{Result}{section.9}% 33
+\BOOKMARK [1][-]{section.10}{RPi ask for data using COBS PacketSerial}{}% 34
+\BOOKMARK [2][-]{subsection.10.1}{Setup}{section.10}% 35
+\BOOKMARK [2][-]{subsection.10.2}{Procedure}{section.10}% 36
+\BOOKMARK [3][-]{subsubsection.10.2.1}{Step one}{subsection.10.2}% 37
+\BOOKMARK [3][-]{subsubsection.10.2.2}{Step two}{subsection.10.2}% 38
+\BOOKMARK [3][-]{subsubsection.10.2.3}{Step three}{subsection.10.2}% 39
+\BOOKMARK [2][-]{subsection.10.3}{Result}{section.10}% 40
+\BOOKMARK [1][-]{section.11}{RPi ask for data when A send bump detected}{}% 41
+\BOOKMARK [2][-]{subsection.11.1}{Setup}{section.11}% 42
+\BOOKMARK [2][-]{subsection.11.2}{Procedure}{section.11}% 43
+\BOOKMARK [3][-]{subsubsection.11.2.1}{Step one}{subsection.11.2}% 44
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Step two}{subsection.11.2}% 45
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Step three}{subsection.11.2}% 46
+\BOOKMARK [3][-]{subsubsection.11.2.4}{Step four}{subsection.11.2}% 47
+\BOOKMARK [2][-]{subsection.11.3}{Result}{section.11}% 48
+\BOOKMARK [1][-]{section.12}{Conclusion}{}% 49
+\BOOKMARK [1][-]{section.13}{Appendix}{}% 50
+\BOOKMARK [2][-]{subsection.13.1}{Appendix A}{section.13}% 51
+\BOOKMARK [2][-]{subsection.13.2}{Appendix B}{section.13}% 52
+\BOOKMARK [2][-]{subsection.13.3}{Appendix C}{section.13}% 53

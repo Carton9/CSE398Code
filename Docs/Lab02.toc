@@ -1,0 +1,53 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}% 
+\contentsline {section}{\numberline {2}Boot and display the Beaglebone Desktop GUI}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Setup}{4}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Procedure}{4}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Result}{4}{subsection.2.3}% 
+\contentsline {section}{\numberline {3}Boot and display the RPi Desktop}{5}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Setup}{5}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Procedure}{5}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Result}{5}{subsection.3.3}% 
+\contentsline {section}{\numberline {4}Arduino serial port}{6}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Setup}{6}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Procedure}{6}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Result}{6}{subsection.4.3}% 
+\contentsline {section}{\numberline {5}Flip a bit test on RPi}{7}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Setup}{7}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Procedure}{7}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Result}{7}{subsection.5.3}% 
+\contentsline {section}{\numberline {6}Send serial data to and from RPi from Arduino}{8}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Setup}{8}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Procedure}{8}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Result}{8}{subsection.6.3}% 
+\contentsline {section}{\numberline {7}Send a single float in COBS format out Arduino}{9}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Setup}{9}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Procedure}{9}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.3}Result}{9}{subsection.7.3}% 
+\contentsline {section}{\numberline {8}Send a single float in COBS format, A to RPi}{10}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Setup}{10}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Procedure}{10}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.3}Result}{10}{subsection.8.3}% 
+\contentsline {section}{\numberline {9}Send a float array in COBS format, A to RPi}{11}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}Setup}{11}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}Procedure}{11}{subsection.9.2}% 
+\contentsline {subsection}{\numberline {9.3}Result}{11}{subsection.9.3}% 
+\contentsline {section}{\numberline {10}RPi ask for data using COBS PacketSerial}{12}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}Setup}{12}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}Procedure}{12}{subsection.10.2}% 
+\contentsline {subsubsection}{\numberline {10.2.1}Step one}{13}{subsubsection.10.2.1}% 
+\contentsline {subsubsection}{\numberline {10.2.2}Step two}{13}{subsubsection.10.2.2}% 
+\contentsline {subsubsection}{\numberline {10.2.3}Step three}{14}{subsubsection.10.2.3}% 
+\contentsline {subsection}{\numberline {10.3}Result}{15}{subsection.10.3}% 
+\contentsline {section}{\numberline {11}RPi ask for data when A send bump detected}{17}{section.11}% 
+\contentsline {subsection}{\numberline {11.1}Setup}{17}{subsection.11.1}% 
+\contentsline {subsection}{\numberline {11.2}Procedure}{17}{subsection.11.2}% 
+\contentsline {subsubsection}{\numberline {11.2.1}Step one}{18}{subsubsection.11.2.1}% 
+\contentsline {subsubsection}{\numberline {11.2.2}Step two}{18}{subsubsection.11.2.2}% 
+\contentsline {subsubsection}{\numberline {11.2.3}Step three}{18}{subsubsection.11.2.3}% 
+\contentsline {subsubsection}{\numberline {11.2.4}Step four}{19}{subsubsection.11.2.4}% 
+\contentsline {subsection}{\numberline {11.3}Result}{20}{subsection.11.3}% 
+\contentsline {section}{\numberline {12}Conclusion}{23}{section.12}% 
+\contentsline {section}{\numberline {13}Appendix}{23}{section.13}% 
+\contentsline {subsection}{\numberline {13.1}Appendix A}{23}{subsection.13.1}% 
+\contentsline {subsection}{\numberline {13.2}Appendix B}{23}{subsection.13.2}% 
+\contentsline {subsection}{\numberline {13.3}Appendix C}{24}{subsection.13.3}% 
