@@ -55,7 +55,7 @@ FaceLoc detectAndDisplay( Mat frame )
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
     f.x=faces[0].x+ faces[0].width*0.5-(frame_x*0.5);
-    f.x=faces[0].y + faces[0].height*0.5-(frame_y*0.5);
+    f.y=faces[0].y + faces[0].height*0.5-(frame_y*0.5);
   }
   imshow("this is you, smile! :)", frame);
   waitKey(1);
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
   int turn[3]={460,300,130};
   int rise[3]={420,400,250};
   int h=300;
-  int v=400;
+  int v=300;
   rfcomm_server rout;
   rout<< "good news";
   pwm.setPWM(0, 0, turn[1]);
