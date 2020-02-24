@@ -97,11 +97,11 @@ int main(int argc, char** argv)
           FaceLoc f=detectAndDisplay(frame);
           h+=-1*f.x*0.5;
           v+=-1*f.y*0.5;
-          if (h>trun[0])
+          if (h>turn[0])
           {
             h=turn[0];
           }
-          if (h<trun[2])
+          if (h<turn[2])
           {
             h=turn[2];
           }
