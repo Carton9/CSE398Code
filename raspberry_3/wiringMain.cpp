@@ -104,11 +104,11 @@ void detectAndDisplay( Mat frame )
 // cout << "TP" << endl;
   for( size_t i = 0; i < faces.size(); i++ )
   {
-    // cout << faces[i].x << " " <<  faces[i].y << endl;
+    cout << faces[i].x << " " <<  faces[i].y << endl;
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   }
-  imshow("this is you, smile! :)", frame);
+  imshow("this is you, smile! :)", frame_gray);
   waitKey(1);
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
