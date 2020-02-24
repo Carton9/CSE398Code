@@ -66,8 +66,8 @@ int main(int argc, char** argv)
   int rise[3]={420,400,250};
   rfcomm_server rout;
   rout<< "good news";
-  pwm.setPWM(0, 0, turn[0]);
-  pwm.setPWM(1, 0, rise[0]);
+  pwm.setPWM(0, 0, turn[1]);
+  pwm.setPWM(1, 0, rise[1]);
     face_cascade.load(face_cascade_name);
     for(int i=0;i<1000;i++)
     {
