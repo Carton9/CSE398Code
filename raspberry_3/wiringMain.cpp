@@ -10,19 +10,21 @@
 #include "rfcomm-server.h"
 #include "opencv2/opencv.hpp"
 #include <vector>
+#include <thread>
 using namespace cv;
 using namespace std;
 #define SERVOMIN  500 // This is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX  1000 // This is the 'maximum' pulse length count (out of 4096)
 #define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
 
-
+  rfcomm_server rout;
 String face_cascade_name = "haarcascade_frontalface_alt.xml";
  String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
  CascadeClassifier face_cascade;
  CascadeClassifier eyes_cascade;
  string window_name = "Capture - Face detection";
  RNG rng(12345);
+ int on=1;
  struct FaceLoc
  {
    int x;
@@ -62,6 +64,17 @@ FaceLoc detectAndDisplay( Mat frame )
   return f;
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
+ void readInput(){
+             string goodone=rout.readRF();
+          if ((goodone)[0]=='M'){
+            cout << "TP3" << endl;
+            on=0;
+          }
+          if ((goodone)[0]=='L'){
+            cout << "TP3" << endl;
+            on=1;
+          }
+ }
 int main(int argc, char** argv)
 {
     VideoCapture cap;
@@ -82,12 +95,12 @@ int main(int argc, char** argv)
   int rise[3]={420,400,250};
   int h=300;
   int v=350;
-  rfcomm_server rout;
+
   rout<< "good news";
   pwm.setPWM(0, 0, turn[1]);
   pwm.setPWM(1, 0, 350);
     face_cascade.load(face_cascade_name);
-    int on=1;
+    thread t(readInput);
     for(;;)
     {
           Mat frame;
@@ -96,15 +109,6 @@ int main(int argc, char** argv)
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
           FaceLoc f=detectAndDisplay(frame);
-          string goodone=rout.readRF();
-          if ((goodone)[0]=='M'){
-            cout << "TP3" << endl;
-            on=0;
-          }
-          if ((goodone)[0]=='L'){
-            cout << "TP3" << endl;
-            on=1;
-          }
           if (on==0)
           {
             continue;
