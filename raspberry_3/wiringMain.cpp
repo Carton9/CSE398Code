@@ -95,7 +95,7 @@ int main(int argc, char** argv)
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
           FaceLoc f=detectAndDisplay(frame);
-          if (f.x>0)
+          if (f.y>0)
             h--;
           // if (f.x<0)
           //   h++;
