@@ -115,8 +115,10 @@ int main(int argc, char** argv)
     VideoCapture cap;
     // open the default camera, use something different from 0 otherwise;
     // Check VideoCapture documentation.
+    cout << "tp1"<<endl;
     if(!cap.open(0))
         return 0;
+      cout << "tp2"<<endl;
     // Mat frame;
     // cap >> frame;
     // vector<int> compression_params;
