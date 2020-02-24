@@ -83,33 +83,33 @@ using namespace std;
 
 
 
-// String face_cascade_name = "haarcascade_frontalface_alt.xml";
-//  String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
-//  CascadeClassifier face_cascade;
-//  CascadeClassifier eyes_cascade;
-//  string window_name = "Capture - Face detection";
-//  RNG rng(12345);
-// void detectAndDisplay( Mat frame )
-// {
-//   std::vector<Rect> faces;
-//   Mat frame_gray;
+String face_cascade_name = "haarcascade_frontalface_alt.xml";
+ String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
+ CascadeClassifier face_cascade;
+ CascadeClassifier eyes_cascade;
+ string window_name = "Capture - Face detection";
+ RNG rng(12345);
+void detectAndDisplay( Mat frame )
+{
+  std::vector<Rect> faces;
+  Mat frame_gray;
 
-//   cvtColor( frame, frame_gray, CV_BGR2GRAY );
-//   equalizeHist( frame_gray, frame_gray );
+  cvtColor( frame, frame_gray, CV_BGR2GRAY );
+  equalizeHist( frame_gray, frame_gray );
     
-//   //-- Detect faces
-//   face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
-// // cout << "TP" << endl;
-//   for( size_t i = 0; i < faces.size(); i++ )
-//   {
-//     cout << faces[i].x << " " <<  faces[i].y << endl;
-//     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-//     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-//   }
-//   imshow("this is you, smile! :)", frame);
-//   waitKey(10);
-//         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
-//  }
+  //-- Detect faces
+  face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+// cout << "TP" << endl;
+  for( size_t i = 0; i < faces.size(); i++ )
+  {
+    cout << faces[i].x << " " <<  faces[i].y << endl;
+    Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
+    ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
+  }
+  imshow("this is you, smile! :)", frame);
+  waitKey(10);
+        //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
+ }
 int main(int argc, char** argv)
 {
     VideoCapture cap;
@@ -131,16 +131,16 @@ int main(int argc, char** argv)
     // waitKey(1000);
     // imshow("this is you, smile! :)", frame);
     // waitKey(100);
-    // face_cascade.load(face_cascade_name);
+    face_cascade.load(face_cascade_name);
     for(int i=0;i<1000;i++)
     {
           Mat frame;
           // cout << "tp3 " << frame <<endl;
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
-            // detectAndDisplay(frame);
-          imshow("this is you, smile! :)", frame);
-          waitKey(10);
+            detectAndDisplay(frame);
+          // imshow("this is you, smile! :)", frame);
+          // waitKey(10);
     }
     // cap.close();
     return 0;
