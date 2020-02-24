@@ -23,13 +23,13 @@ String face_cascade_name = "haarcascade_frontalface_alt.xml";
  CascadeClassifier eyes_cascade;
  string window_name = "Capture - Face detection";
  RNG rng(12345);
- struct faceLoc
+ struct FaceLoc
  {
    int x;
    int y;
  };
  
-void detectAndDisplay( Mat frame )
+FaceLoc detectAndDisplay( Mat frame )
 {
   std::vector<Rect> faces;
   Mat frame_gray;
@@ -46,14 +46,20 @@ void detectAndDisplay( Mat frame )
   Point center( frame_x*0.5, frame_y*0.5 );
   ellipse( frame, center, Size( 20, 20), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
 // cout << "TP" << endl;
+  FaceLoc f;
+  f.x=0;
+  f.y=0;
   for( size_t i = 0; i < faces.size(); i++ )
   {
     cout << faces[i].x+ faces[i].width*0.5-(frame_x*0.5) << " " <<  faces[i].y + faces[i].height*0.5-(frame_y*0.5)<<" "<< frame_x << " " <<frame_y << endl;
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
+    f.x=faces[0].x+ faces[0].width*0.5-(frame_x*0.5);
+    f.x=faces[0].y + faces[0].height*0.5-(frame_y*0.5);
   }
   imshow("this is you, smile! :)", frame);
   waitKey(1);
+  return f;
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
 int main(int argc, char** argv)
@@ -74,6 +80,8 @@ int main(int argc, char** argv)
   pwm.setPWMFreq(SERVO_FREQ);
   int turn[3]={460,300,130};
   int rise[3]={420,400,250};
+  int h=300;
+  int v=400;
   rfcomm_server rout;
   rout<< "good news";
   pwm.setPWM(0, 0, turn[1]);
@@ -86,7 +94,27 @@ int main(int argc, char** argv)
           // cout << "tp3 " << frame <<endl;
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
-            detectAndDisplay(frame);
+          FaceLoc f=detectAndDisplay(frame);
+          h+=-1*f.x*0.5;
+          v+=-1*f.y*0.5;
+          if (h>trun[0])
+          {
+            h=turn[0];
+          }
+          if (h<trun[2])
+          {
+            h=turn[2];
+          }
+          if (v>rise[0])
+          {
+            v=rise[0];
+          }
+          if (v<rise[2])
+          {
+            v=rise[0];
+          }
+          pwm.setPWM(0, 0, h);
+          pwm.setPWM(1, 0, v);
           // imshow("this is you, smile! :)", frame);
           // waitKey(10);
     }
