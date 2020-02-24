@@ -100,9 +100,9 @@ int main(int argc, char** argv)
           if (f.x<0)
             h++;
           if (f.y>0)
-            v--;
-          if (f.y<0)
             v++;
+          if (f.y<0)
+            v--;
           cout << h << " " << v << endl;
           if (h>turn[0])
           {
