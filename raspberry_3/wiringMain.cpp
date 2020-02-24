@@ -35,7 +35,7 @@ void detectAndDisplay( Mat frame )
   Mat frame_gray;
   int frame_x= frame.rows;
   int frame_y= frame.cols;
-  cout << frame_x << " " <<frame_y<<endl; 
+  // cout <<endl; 
   cvtColor( frame, frame_gray, CV_BGR2GRAY );
   equalizeHist( frame_gray, frame_gray );
     
@@ -46,7 +46,7 @@ void detectAndDisplay( Mat frame )
 // cout << "TP" << endl;
   for( size_t i = 0; i < faces.size(); i++ )
   {
-    cout << faces[i].x << " " <<  faces[i].y << endl;
+    cout << faces[i].x << " " <<  faces[i].y<<" "<< frame_x << " " <<frame_y << endl;
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   }
