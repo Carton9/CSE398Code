@@ -132,7 +132,7 @@ int main(int argc, char** argv)
     // imshow("this is you, smile! :)", frame);
     // waitKey(100);
     face_cascade.load(face_cascade_name);
-    for(int i=0;i<1000;i++)
+    for(int i=0;i<100;i++)
     {
           Mat frame;
           // cout << "tp3 " << frame <<endl;
