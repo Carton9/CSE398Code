@@ -107,7 +107,7 @@ void detectAndDisplay( Mat frame )
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   }
   imshow("this is you, smile! :)", frame);
-  waitKey(10);
+  waitKey(1);
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
 int main(int argc, char** argv)
