@@ -132,7 +132,7 @@ int main(int argc, char** argv)
     // imshow("this is you, smile! :)", frame);
     // waitKey(100);
     // face_cascade.load(face_cascade_name);
-    for(;;)
+    for(int i=0;i<1000;i++)
     {
           Mat frame;
           cout << "tp3 " << frame <<endl
@@ -140,7 +140,7 @@ int main(int argc, char** argv)
           if( frame.empty() ) continue; // end of video stream
             // detectAndDisplay(frame);
           imshow("this is you, smile! :)", frame);
-          
+          waitKey(10);
     }
     // cap.close();
     return 0;
