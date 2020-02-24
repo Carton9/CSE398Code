@@ -53,7 +53,7 @@ FaceLoc detectAndDisplay( Mat frame )
   f.y=0;
   for( size_t i = 0; i < faces.size(); i++ )
   {
-    cout << faces[i].x+ faces[i].width*0.5-(frame_x*0.5) << " " <<  faces[i].y + faces[i].height*0.5-(frame_y*0.5)<<" "<< frame_x << " " <<frame_y << endl;
+    // cout << faces[i].x+ faces[i].width*0.5-(frame_x*0.5) << " " <<  faces[i].y + faces[i].height*0.5-(frame_y*0.5)<<" "<< frame_x << " " <<frame_y << endl;
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
     f.x=faces[0].x+ faces[0].width*0.5-(frame_x*0.5);
@@ -109,6 +109,7 @@ int main(int argc, char** argv)
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
           FaceLoc f=detectAndDisplay(frame);
+          cout << on << endl;
           if (on==0)
           {
             continue;
@@ -122,7 +123,7 @@ int main(int argc, char** argv)
             v++;
           if (f.y<0)
             v--;
-          cout << h << " " << v << endl;
+          // cout << h << " " << v << endl;
           if (h>turn[0])
           {
             h=turn[0];
