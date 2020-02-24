@@ -135,6 +135,7 @@ int main(int argc, char** argv)
     for(;;)
     {
           Mat frame;
+          cout << "tp3 " << frame <<endl
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
             // detectAndDisplay(frame);
