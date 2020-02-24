@@ -95,7 +95,7 @@ int main(int argc, char** argv)
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
           FaceLoc f=detectAndDisplay(frame);
-          h+=-1*f.x*0.1;
+          h+=f.x*0.1;
           v+=-1*f.y*0.1;
           cout << h << " " << v << endl;
           if (h>turn[0])
