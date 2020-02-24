@@ -103,9 +103,9 @@ void detectAndDisplay( Mat frame )
 // cout << "TP" << endl;
   for( size_t i = 0; i < faces.size(); i++ )
   {
-    // cout << faces[i].x << " " <<  faces[i].y << endl;
-    Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-    ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
+    cout << faces[i].x << " " <<  faces[i].y << endl;
+    // Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
+    // ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   }
   imshow("this is you, smile! :)", frame);
   waitKey(1);
@@ -136,6 +136,7 @@ int main(int argc, char** argv)
     for(int i=0;i<100;i++)
     {
           Mat frame;
+          cout << i << endl;
           // cout << "tp3 " << frame <<endl;
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
