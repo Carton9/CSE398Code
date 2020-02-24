@@ -81,11 +81,11 @@ int main(int argc, char** argv)
   int turn[3]={460,300,130};
   int rise[3]={420,400,250};
   int h=300;
-  int v=300;
+  int v=350;
   rfcomm_server rout;
   rout<< "good news";
   pwm.setPWM(0, 0, turn[1]);
-  pwm.setPWM(1, 0, 300);
+  pwm.setPWM(1, 0, 350);
     face_cascade.load(face_cascade_name);
     for(;;)
     {
@@ -97,8 +97,8 @@ int main(int argc, char** argv)
           FaceLoc f=detectAndDisplay(frame);
           if (f.x>0)
             h--;
-          // if (f.x<0)
-          //   h++;
+          if (f.x<0)
+            h++;
           
           cout << h << " " << v << endl;
           if (h>turn[0])
