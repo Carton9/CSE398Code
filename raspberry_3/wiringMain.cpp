@@ -65,7 +65,9 @@ FaceLoc detectAndDisplay( Mat frame )
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
  void readInput(){
-             string goodone=rout.readRF();
+         while (1)
+         {
+          string goodone=rout.readRF();
           if ((goodone)[0]=='M'){
             cout << "TP3" << endl;
             on=0;
@@ -74,6 +76,8 @@ FaceLoc detectAndDisplay( Mat frame )
             cout << "TP3" << endl;
             on=1;
           }
+         }
+         
  }
 int main(int argc, char** argv)
 {
