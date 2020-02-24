@@ -98,8 +98,9 @@ void detectAndDisplay( Mat frame )
   // equalizeHist( frame_gray, frame_gray );
     
   //-- Detect faces
-  // face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
-  face_cascade.detectMultiScale( frame, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+  resize(frame,frame_gray,frame.size(),0.5,0.5,INTER_CUBIC);
+  face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+  // face_cascade.detectMultiScale( frame, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
 // cout << "TP" << endl;
   for( size_t i = 0; i < faces.size(); i++ )
   {
