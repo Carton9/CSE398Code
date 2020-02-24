@@ -85,7 +85,7 @@ int main(int argc, char** argv)
   rfcomm_server rout;
   rout<< "good news";
   pwm.setPWM(0, 0, turn[1]);
-  pwm.setPWM(1, 0, rise[1]);
+  pwm.setPWM(1, 0, 300);
     face_cascade.load(face_cascade_name);
     for(;;)
     {
