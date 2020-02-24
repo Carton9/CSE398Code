@@ -23,11 +23,19 @@ String face_cascade_name = "haarcascade_frontalface_alt.xml";
  CascadeClassifier eyes_cascade;
  string window_name = "Capture - Face detection";
  RNG rng(12345);
+ struct faceLoc
+ {
+   int x;
+   int y;
+ };
+ 
 void detectAndDisplay( Mat frame )
 {
   std::vector<Rect> faces;
   Mat frame_gray;
-
+  int frame_x= frame.rows;
+  int frame_y= frame.cols;
+  cout << frame_x << " " <<frame_y<<endl; 
   cvtColor( frame, frame_gray, CV_BGR2GRAY );
   equalizeHist( frame_gray, frame_gray );
     
