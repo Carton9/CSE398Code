@@ -94,11 +94,11 @@ void detectAndDisplay( Mat frame )
   std::vector<Rect> faces;
   Mat frame_gray;
 
-  // cvtColor( frame, frame_gray, CV_BGR2GRAY );
-  // equalizeHist( frame_gray, frame_gray );
+  cvtColor( frame, frame_gray, CV_BGR2GRAY );
+  equalizeHist( frame_gray, frame_gray );
     
   //-- Detect faces
-  resize(frame,frame_gray,frame.size(),0.5,0.5,INTER_CUBIC);
+  // resize(frame,frame_gray,frame.size(),0.5,0.5,INTER_CUBIC);
   face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
   // face_cascade.detectMultiScale( frame, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
 // cout << "TP" << endl;
@@ -108,7 +108,7 @@ void detectAndDisplay( Mat frame )
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   }
-  imshow("this is you, smile! :)", frame_gray);
+  // imshow("this is you, smile! :)", frame_gray);
   waitKey(1);
         //   if( waitKey(10) == 27 ) break; // stop capturing by pressing ESC 
  }
