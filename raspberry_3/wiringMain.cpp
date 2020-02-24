@@ -79,7 +79,7 @@ int main(int argc, char** argv)
   pwm.setPWM(0, 0, turn[1]);
   pwm.setPWM(1, 0, rise[1]);
     face_cascade.load(face_cascade_name);
-    for(int i=0;i<1000;i++)
+    for(;;)
     {
           Mat frame;
           // cout << i << endl;
