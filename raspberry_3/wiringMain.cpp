@@ -97,8 +97,8 @@ int main(int argc, char** argv)
           FaceLoc f=detectAndDisplay(frame);
           if (f.x>0)
             h--;
-          if (f.x<0)
-            h++;
+          // if (f.x<0)
+          //   h++;
           
           cout << h << " " << v << endl;
           if (h>turn[0])
