@@ -87,6 +87,7 @@ int main(int argc, char** argv)
   pwm.setPWM(0, 0, turn[1]);
   pwm.setPWM(1, 0, 350);
     face_cascade.load(face_cascade_name);
+    int on=1;
     for(;;)
     {
           Mat frame;
@@ -95,6 +96,20 @@ int main(int argc, char** argv)
           cap >> frame;
           if( frame.empty() ) continue; // end of video stream
           FaceLoc f=detectAndDisplay(frame);
+          string goodone=rout.readRF();
+          if ((goodone)[0]=='M'){
+            cout << "TP3" << endl;
+            on=0;
+          }
+          if ((goodone)[0]=='L'){
+            cout << "TP3" << endl;
+            on=1;
+          }
+          if (on==0)
+          {
+            continue;
+          }
+          
           if (f.x>0)
             h--;
           if (f.x<0)

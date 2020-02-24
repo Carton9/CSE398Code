@@ -69,10 +69,14 @@ public:
     string readRF(){
         char buf[1024] = { 0 };
         int bytes_read=-1;
+        int i=0;
         while (bytes_read==-1)
         {
             memset(buf, 0, sizeof(buf));
             bytes_read= read(client, buf, sizeof(buf));
+            i++;
+            if(i>1000)
+                return string("ERROR");
         }
         
         // cout << "tp1.1 " <<bytes_read << endl;
