@@ -42,8 +42,6 @@ void detectAndDisplay( Mat frame )
   //-- Detect faces
   // resize(frame,frame_gray,frame.size(),0.5,0.5,INTER_CUBIC);
   face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(100, 100) );
-  Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-  ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
   // face_cascade.detectMultiScale( frame, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
 // cout << "TP" << endl;
   for( size_t i = 0; i < faces.size(); i++ )
