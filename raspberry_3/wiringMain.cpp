@@ -33,8 +33,8 @@ void detectAndDisplay( Mat frame )
 {
   std::vector<Rect> faces;
   Mat frame_gray;
-  int frame_y= frame.rows;
-  int frame_x= frame.cols;
+  int frame_x= frame.rows;
+  int frame_y= frame.cols;
   // cout <<endl; 
   cvtColor( frame, frame_gray, CV_BGR2GRAY );
   equalizeHist( frame_gray, frame_gray );
