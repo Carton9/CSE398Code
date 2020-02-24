@@ -129,7 +129,7 @@ int main(int argc, char** argv)
     // waitKey(1000);
     // imshow("this is you, smile! :)", frame);
     // waitKey(100);
-    face_cascade.load(face_cascade_name);
+    // face_cascade.load(face_cascade_name);
     for(;;)
     {
           Mat frame;
