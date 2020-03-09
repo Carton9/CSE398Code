@@ -31,5 +31,5 @@ class Motor{
         }
     private:
         int motors[3];
-}
+};
 #endif
