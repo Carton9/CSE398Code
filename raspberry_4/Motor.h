@@ -10,7 +10,7 @@
 #include <thread>
 class Motor{
     public:
-        Motor(int motorPWM,int motorA,int motorB);{
+        Motor(int motorPWM,int motorA,int motorB){
             pinMode (motorA, OUTPUT) ;
             pinMode (motorB, OUTPUT) ;
             softPwmCreate (motorPWM, 0, 100) ;
