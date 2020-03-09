@@ -15,16 +15,17 @@
 using namespace cv;
 using namespace std;
 void motor_control(int motor, int speed){
+  int dir=speed>0;
   if (motor==0)
   {
-    digitalWrite (24, 0) ;
-    digitalWrite (25, 1) ;
+    digitalWrite (24, dir) ;
+    digitalWrite (25, !dir) ;
+    softPwmWrite (23, abs(speed));
   }else{
-
+    digitalWrite (28, dir) ;
+    digitalWrite (27, !dir) ;
+    softPwmWrite (26, abs(speed));
   }
-  
-
- 
 }
 
 int main(int argc, char** argv)
@@ -39,16 +40,18 @@ int main(int argc, char** argv)
   softPwmCreate (23, 0, 100) ;
   softPwmCreate (26, 0, 100) ;
   while(1){
-    digitalWrite (24, 0) ;
-    digitalWrite (25, 1) ;
+    // digitalWrite (24, 0) ;
+    // digitalWrite (25, 1) ;
 
-    digitalWrite (28, 0) ;
-    digitalWrite (27, 1) ;
+    // digitalWrite (28, 0) ;
+    // digitalWrite (27, 1) ;
     for (int i = 0; i < 100; i++)
     {
-      softPwmWrite (23, i);
-      softPwmWrite (26, i);
-      usleep(100000);
+      // softPwmWrite (23, i);
+      // softPwmWrite (26, i);
+      motor_control(0,i)
+      motor_control(1,i)
+      usleep(10000);
     }
 
     // digitalWrite (24, 1) ;
