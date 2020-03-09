@@ -17,15 +17,14 @@ using namespace std;
 void motor_control(int motor, int speed){
   if (motor==0)
   {
-      pinMode (24, OUTPUT) ;
-     pinMode (25, OUTPUT) ;
+    digitalWrite (24, 0) ;
+    digitalWrite (25, 1) ;
   }else{
 
   }
   
 
-  pinMode (24, OUTPUT) ;
-  pinMode (25, OUTPUT) ;
+ 
 }
 
 int main(int argc, char** argv)
@@ -34,21 +33,21 @@ int main(int argc, char** argv)
   pinMode (24, OUTPUT) ;
   pinMode (25, OUTPUT) ;
 
-  pinMode (27, OUTPUT) ;
-  pinMode (22, OUTPUT) ;
+  pinMode (16, OUTPUT) ;
+  pinMode (12, OUTPUT) ;
   
   softPwmCreate (23, 0, 100) ;
-  softPwmCreate (17, 0, 100) ;
+  softPwmCreate (20, 0, 100) ;
   while(1){
     digitalWrite (24, 0) ;
     digitalWrite (25, 1) ;
 
-    digitalWrite (27, 0) ;
-    digitalWrite (22, 1) ;
+    digitalWrite (16, 0) ;
+    digitalWrite (12, 1) ;
     for (int i = 0; i < 100; i++)
     {
       softPwmWrite (23, i);
-      softPwmWrite (17, i);
+      softPwmWrite (20, i);
       usleep(100000);
     }
 
