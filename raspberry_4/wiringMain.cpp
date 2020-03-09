@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 
     // digitalWrite (28, 0) ;
     // digitalWrite (27, 1) ;
-    for (int i = 0; i < 100; i++)
+    for (int i = -100; i < 100; i++)
     {
       // softPwmWrite (23, i);
       // softPwmWrite (26, i);
