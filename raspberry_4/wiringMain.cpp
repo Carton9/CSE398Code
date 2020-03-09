@@ -38,7 +38,7 @@ int main(int argc, char** argv)
   pinMode (22, OUTPUT) ;
   
   softPwmCreate (23, 0, 100) ;
-  // softPwmCreate (17, 0, 100) ;
+  softPwmCreate (17, 0, 100) ;
   while(1){
     digitalWrite (24, 0) ;
     digitalWrite (25, 1) ;
