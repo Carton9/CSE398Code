@@ -35,20 +35,21 @@ int main(int argc, char** argv)
     {
       softPwmWrite (23, i);
       // softPwmWrite (17, i);
-      usleep(10000);
+      usleep(100000);
     }
 
-    // digitalWrite (24, 1) ;
-    // digitalWrite (25, 0) ;
+    digitalWrite (24, 1) ;
+    digitalWrite (25, 0) ;
 
     // digitalWrite (27, 1) ;
     // digitalWrite (22, 0) ;
-    // for (int i = 0; i < 100; i++)
-    // {
-    //   softPwmWrite (23, i);
-    //   softPwmWrite (17, i);
-    //   sleep(10);
-    // }
+    for (int i = 0; i < 100; i++)
+    {
+      softPwmWrite (23, i);
+      // softPwmWrite (17, i);
+      usleep(100000);
+    }
+
     
   }
   return 0;
