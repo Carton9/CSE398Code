@@ -49,8 +49,8 @@ int main(int argc, char** argv)
     {
       // softPwmWrite (23, i);
       // softPwmWrite (26, i);
-      motor_control(0,i)
-      motor_control(1,i)
+      motor_control(0,i);
+      motor_control(1,i);
       usleep(10000);
     }
 
