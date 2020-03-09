@@ -24,31 +24,31 @@ int main(int argc, char** argv)
   pinMode (22, OUTPUT) ;
   
   softPwmCreate (23, 0, 100) ;
-  softPwmCreate (17, 0, 100) ;
+  // softPwmCreate (17, 0, 100) ;
   while(1){
     digitalWrite (24, 0) ;
     digitalWrite (25, 1) ;
 
-    digitalWrite (27, 0) ;
-    digitalWrite (22, 1) ;
+    // digitalWrite (27, 0) ;
+    // digitalWrite (22, 1) ;
     for (int i = 0; i < 100; i++)
     {
       softPwmWrite (23, i);
-      softPwmWrite (17, i);
+      // softPwmWrite (17, i);
       sleep(10);
     }
 
-    digitalWrite (24, 1) ;
-    digitalWrite (25, 0) ;
+    // digitalWrite (24, 1) ;
+    // digitalWrite (25, 0) ;
 
-    digitalWrite (27, 1) ;
-    digitalWrite (22, 0) ;
-    for (int i = 0; i < 100; i++)
-    {
-      softPwmWrite (23, i);
-      softPwmWrite (17, i);
-      sleep(10);
-    }
+    // digitalWrite (27, 1) ;
+    // digitalWrite (22, 0) ;
+    // for (int i = 0; i < 100; i++)
+    // {
+    //   softPwmWrite (23, i);
+    //   softPwmWrite (17, i);
+    //   sleep(10);
+    // }
     
   }
   return 0;
