@@ -4,7 +4,7 @@
 #include <fstream>
 #include <wiringPi.h>
 #include <softPwm.h>
-#include <Motor.h>
+#include "Motor.h"
 // #include <wiringSerial.h>
 // #include <wiringPiI2C.h>
 #include <unistd.h>
