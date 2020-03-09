@@ -16,6 +16,7 @@ using namespace cv;
 using namespace std;
 int main(int argc, char** argv)
 {
+  wiringPiSetup () ;
   pinMode (24, OUTPUT) ;
   pinMode (25, OUTPUT) ;
   digitalWrite (24, 0) ;
