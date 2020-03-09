@@ -33,8 +33,8 @@ int main(int argc, char** argv)
   pinMode (24, OUTPUT) ;
   pinMode (25, OUTPUT) ;
 
-  pinMode (16, OUTPUT) ;
-  pinMode (12, OUTPUT) ;
+  pinMode (5, OUTPUT) ;
+  pinMode (6, OUTPUT) ;
   
   softPwmCreate (23, 0, 100) ;
   softPwmCreate (20, 0, 100) ;
@@ -42,8 +42,8 @@ int main(int argc, char** argv)
     digitalWrite (24, 0) ;
     digitalWrite (25, 1) ;
 
-    digitalWrite (16, 0) ;
-    digitalWrite (12, 1) ;
+    digitalWrite (5, 0) ;
+    digitalWrite (6, 1) ;
     for (int i = 0; i < 100; i++)
     {
       softPwmWrite (23, i);
