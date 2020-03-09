@@ -81,13 +81,11 @@ FaceLoc detectAndDisplay( Mat frame )
  }
 int main(int argc, char** argv)
 {
-    VideoCapture cap;
+  VideoCapture cap;
     // open the default camera, use something different from 0 otherwise;
     // Check VideoCapture documentation.
-    cout << "tp1"<<endl;
-    if(!cap.open(0))
-        return 0;
-      cout << "tp2"<<endl;
+  if(!cap.open(0))
+    return 0;
   printf ("Raspberry Pi - Gertboard Blink\n") ;
   wiringPiSetup () ;
   // int fd=wiringPiI2CSetup(0x70);

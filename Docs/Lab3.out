@@ -1,0 +1,42 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Image on Raspberry Pi 3B}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Setup}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Procedure}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Result}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Connect to servo motor driver using i2c utility \046 Control Servo motor using i2c utility \046Control Pan-tilt using c++ class}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Setup}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Procedure}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Enable the I2C Port in the Raspberry Pi}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Adapt the Adafruit library to WiringPi environment}{subsection.3.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Testing circuit by attach servo and power supply}{subsection.3.2}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Result}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Connect your phone to RPi using Bluetooth}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Setup}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Procedure}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Result}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Send data to RPi using a BT class and app \046 Control PTU using your phone}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Setup}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Procedure}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Program the bluetooth class}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Connect the bluetooth and send out a message}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Connect the bluetooth and pwm servo}{subsection.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Result}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Get image using camera and raspistill}{}% 24
+\BOOKMARK [2][-]{subsection.6.1}{Setup}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.2}{Procedure}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.3}{Result}{section.6}% 27
+\BOOKMARK [1][-]{section.7}{Install OpenCV, check with -version \046 Get image using OpenCV \046 Face recognition using OpenCV}{}% 28
+\BOOKMARK [2][-]{subsection.7.1}{Setup}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.2}{Procedure}{section.7}% 30
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Install OpenCV and create program}{subsection.7.2}% 31
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Testing camera}{subsection.7.2}% 32
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Testing face recognition}{subsection.7.2}% 33
+\BOOKMARK [2][-]{subsection.7.3}{Result}{section.7}% 34
+\BOOKMARK [1][-]{section.8}{Track Face, keep face centered \046 Add BT command: PTU control + Track On/Off}{}% 35
+\BOOKMARK [2][-]{subsection.8.1}{Setup}{section.8}% 36
+\BOOKMARK [2][-]{subsection.8.2}{Procedure}{section.8}% 37
+\BOOKMARK [3][-]{subsubsection.8.2.1}{PWM controller}{subsection.8.2}% 38
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Bluetooth controller}{subsection.8.2}% 39
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Camera and Face Recognition Handler}{subsection.8.2}% 40
+\BOOKMARK [2][-]{subsection.8.3}{Result}{section.8}% 41
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 42

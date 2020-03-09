@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.8.7)  20 FEB 2020 02:01
+This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.8.7)  27 FEB 2020 15:23
  restricted system commands enabled.
 **Lab02.tex
 (./Lab02.tex
@@ -51,7 +51,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 Inserting `luaotfload.aux.set_xheight' at position 4 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 5 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.049 seconds
+luaotfload | main : initialization completed in 0.052 seconds
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
@@ -1188,7 +1188,7 @@ otf></usr/local/texlive/2019/texmf-dist/fonts/opentype/public/lm/lmroman12-regul
 ar.otf></usr/local/texlive/2019/texmf-dist/fonts/opentype/public/lm/lmroman17-re
 gular.otf></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb>
-Output written on Lab02.pdf (24 pages, 6915964 bytes).
+Output written on Lab02.pdf (24 pages, 6916054 bytes).
 
 PDF statistics: 781 PDF objects out of 1000 (max. 8388607)
  719 compressed objects within 8 object streams
