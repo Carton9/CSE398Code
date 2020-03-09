@@ -14,6 +14,20 @@
 #include <thread>
 using namespace cv;
 using namespace std;
+void motor_control(int motor, int speed){
+  if (motor==0)
+  {
+      pinMode (24, OUTPUT) ;
+     pinMode (25, OUTPUT) ;
+  }else{
+
+  }
+  
+
+  pinMode (24, OUTPUT) ;
+  pinMode (25, OUTPUT) ;
+}
+
 int main(int argc, char** argv)
 {
   wiringPiSetup () ;
@@ -29,12 +43,12 @@ int main(int argc, char** argv)
     digitalWrite (24, 0) ;
     digitalWrite (25, 1) ;
 
-    // digitalWrite (27, 0) ;
-    // digitalWrite (22, 1) ;
+    digitalWrite (27, 0) ;
+    digitalWrite (22, 1) ;
     for (int i = 0; i < 100; i++)
     {
       softPwmWrite (23, i);
-      // softPwmWrite (17, i);
+      softPwmWrite (17, i);
       usleep(100000);
     }
 
