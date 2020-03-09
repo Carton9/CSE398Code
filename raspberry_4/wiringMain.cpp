@@ -35,7 +35,7 @@ int main(int argc, char** argv)
     {
       softPwmWrite (23, i);
       // softPwmWrite (17, i);
-      sleep(10);
+      sleep(1);
     }
 
     // digitalWrite (24, 1) ;
