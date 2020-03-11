@@ -43,7 +43,22 @@ int main(int argc, char** argv)
   // softPwmCreate (26, 0, 100) ;
   // Motor motor1(23,24,25);
   // Motor motor2(26,28,27);
-  MJPEGWriter test(7777);
+    MJPEGWriter test(7777);
+
+    VideoCapture cap;
+    bool ok = cap.open(0);
+    if (!ok)
+    {
+        printf("no cam found ;(.\n");
+        pthread_exit(NULL);
+    }
+    Mat frame;
+    cap >> frame;
+    test.write(frame);
+    frame.release();
+    test.start();
+    while(cap.isOpened()){cap >> frame; test.write(frame); frame.release();}
+    test.stop();
   // while(1){
   //   for (int i = -100; i < 100; i++)
   //   {
