@@ -84,7 +84,10 @@ int main(int argc, char** argv)
 
         //  Wait for next request from client
         socket.recv (&request);
-        string data((char*)request.data());
+        char dataBuffer[10];
+        cout << "TP02" << endl;
+        memcpy (dataBuffer,reply.data (), 10);
+        string data(dataBuffer);
         cout << "Command Get " << data << endl;
         int i=80;
         if (data=="FW"){
