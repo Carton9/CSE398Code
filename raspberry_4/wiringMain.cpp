@@ -108,7 +108,7 @@ int main(int argc, char** argv)
           motor1.motor_control(i);
           motor2.motor_control(-1*i);
         }
-        usleep(1000);
+        usleep(100000);
         motor1.motor_control(0);
         motor2.motor_control(0);
         cout << "TP04" << endl;
