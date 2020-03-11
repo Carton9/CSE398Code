@@ -86,7 +86,7 @@ int main(int argc, char** argv)
         char dataBuffer[10];
         cout << "TP03" << endl;
         cout << request.data() << endl;
-        memcpy (dataBuffer,request.data(), 10);
+        memcpy (dataBuffer,request.data(), 2);
         string data(dataBuffer);
         cout << "Command Get " << data << endl;
         int i=80;
