@@ -78,14 +78,14 @@ int main(int argc, char** argv)
     zmq::context_t context (1);
     zmq::socket_t socket (context, ZMQ_REP);
     socket.bind ("tcp://*:5555");
-
+    cout << "TP02" << endl;
     while (true) {
         zmq::message_t request;
 
         //  Wait for next request from client
         socket.recv (&request);
         char dataBuffer[10];
-        cout << "TP02" << endl;
+        cout << "TP03" << endl;
         memcpy (dataBuffer,reply.data (), 10);
         string data(dataBuffer);
         cout << "Command Get " << data << endl;
