@@ -82,7 +82,9 @@ int main(int argc, char** argv)
     while (true) {
         zmq::message_t request;
         //  Wait for next request from client
+        
         socket.recv (&request);
+        cout << "TP02.5" << endl;
         char dataBuffer[10];
         cout << "TP03" << endl;
         cout << request.data() << endl;
