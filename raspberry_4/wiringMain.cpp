@@ -84,7 +84,7 @@ int main(int argc, char** argv)
 
         //  Wait for next request from client
         socket.recv (&request);
-        string data(request.data());
+        string data((char*)request.data());
         cout << "Command Get " << data << endl;
         int i=80;
         if (data=="FW"){
