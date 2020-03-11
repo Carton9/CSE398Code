@@ -14,6 +14,10 @@
 #include "opencv2/opencv.hpp"
 #include <vector>
 #include <thread>
+#include <zmq.hpp>
+#include <string>
+#include <iostream>
+#include <unistd.h>
 using namespace cv;
 using namespace std;
 // void motor_control(int motor, int speed){
@@ -43,22 +47,48 @@ int main(int argc, char** argv)
   // softPwmCreate (26, 0, 100) ;
   // Motor motor1(23,24,25);
   // Motor motor2(26,28,27);
-    MJPEGWriter test(7777);
 
-    VideoCapture cap;
-    bool ok = cap.open(0);
-    if (!ok)
-    {
-        printf("no cam found ;(.\n");
-        pthread_exit(NULL);
+
+
+    // MJPEGWriter test(7777);
+
+    // VideoCapture cap;
+    // bool ok = cap.open(0);
+    // if (!ok)
+    // {
+    //     printf("no cam found ;(.\n");
+    //     pthread_exit(NULL);
+    // }
+    // Mat frame;
+    // cap >> frame;
+    // test.write(frame);
+    // frame.release();
+    // test.start();
+    // while(cap.isOpened()){cap >> frame; test.write(frame); frame.release();}
+    // test.stop();
+
+    zmq::context_t context (1);
+    zmq::socket_t socket (context, ZMQ_REP);
+    socket.bind ("tcp://*:5555");
+
+    while (true) {
+        zmq::message_t request;
+
+        //  Wait for next request from client
+        socket.recv (&request);
+        std::cout << "Received Hello" << std::endl;
+
+        //  Do some 'work'
+        sleep(1);
+
+        //  Send reply back to client
+        zmq::message_t reply (5);
+        memcpy (reply.data (), "World", 5);
+        socket.send (reply);
     }
-    Mat frame;
-    cap >> frame;
-    test.write(frame);
-    frame.release();
-    test.start();
-    while(cap.isOpened()){cap >> frame; test.write(frame); frame.release();}
-    test.stop();
+
+
+
   // while(1){
   //   for (int i = -100; i < 100; i++)
   //   {
