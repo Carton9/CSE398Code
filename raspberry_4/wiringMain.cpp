@@ -86,7 +86,7 @@ int main(int argc, char** argv)
         socket.recv (&request);
         char dataBuffer[10];
         cout << "TP03" << endl;
-        memcpy (dataBuffer,reply.data (), 10);
+        memcpy (dataBuffer,request.data (), 10);
         string data(dataBuffer);
         cout << "Command Get " << data << endl;
         int i=80;
