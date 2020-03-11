@@ -5,6 +5,7 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 #include "Motor.h"
+#include "MJPEGWriter.h"
 // #include <wiringSerial.h>
 // #include <wiringPiI2C.h>
 #include <unistd.h>
@@ -40,17 +41,18 @@ int main(int argc, char** argv)
   
   // softPwmCreate (23, 0, 100) ;
   // softPwmCreate (26, 0, 100) ;
-  Motor motor1(23,24,25);
-  Motor motor2(26,28,27);
-  while(1){
-    for (int i = -100; i < 100; i++)
-    {
-      // softPwmWrite (23, i);
-      // softPwmWrite (26, i);
-      motor1.motor_control(i);
-      motor2.motor_control(i);
-      usleep(10000);
-    }
-  }
+  // Motor motor1(23,24,25);
+  // Motor motor2(26,28,27);
+  MJPEGWriter test(7777);
+  // while(1){
+  //   for (int i = -100; i < 100; i++)
+  //   {
+  //     // softPwmWrite (23, i);
+  //     // softPwmWrite (26, i);
+  //     motor1.motor_control(i);
+  //     motor2.motor_control(i);
+  //     usleep(10000);
+  //   }
+  // }
   return 0;
 }

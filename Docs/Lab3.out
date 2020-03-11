@@ -3,7 +3,7 @@
 \BOOKMARK [2][-]{subsection.2.1}{Setup}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Procedure}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Result}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Connect to servo motor driver using i2c utility \046 Control Servo motor using i2c utility \046Control Pan-tilt using c++ class}{}% 6
+\BOOKMARK [1][-]{section.3}{Connect to servo motor driver using i2c utility \046 Control Servo motor using i2c utility \046 Control Pan-tilt using c++ class}{}% 6
 \BOOKMARK [2][-]{subsection.3.1}{Setup}{section.3}% 7
 \BOOKMARK [2][-]{subsection.3.2}{Procedure}{section.3}% 8
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Enable the I2C Port in the Raspberry Pi}{subsection.3.2}% 9

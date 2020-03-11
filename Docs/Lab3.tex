@@ -34,10 +34,9 @@
 \tableofcontents
 \clearpage
 \section{Introduction}
+Embedded system play an important role in the modern society. In this lab, we will discuss how to create an embedded system using open source hardware and learn about the different problem engineers will facing in the real life development. In this lab, the platform we use will be Raspberry Pi 3B. The Raspberry Pi 3B have buildin MIPI-CSI2 interface, bluetooth, and hardware I2C. By using those hardware, we will build a device that can control a Pan-tilt unit and use camera with face recognition module to track down the face appear in the frame and allow phone to turn on/off the whole device via bluetooth connection.
+
 \clearpage
-
-
-
 \section{Image on Raspberry Pi 3B}
 \subsection{Setup}
 The installation of Raspberry Pi 3B require following components.
@@ -52,14 +51,16 @@ The image can be download in the official website of raspberry pi website.
 To install the Raspberry Pi system to the SD card require a image burning software. After download the software and the image of the OS. Insert the SD card and start the process. After 20 min, the system will be install into the sd card. Putting the sd card to the Raspberry Pi 3B and power the system. It will boot to the system.
 \subsection{Result}
 After install, it will display a Raspberry Desktop interface.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab2_RBP_DP.jpg}
+	\caption{Raspberry Pi 3B Desktop} 
+	\label{BBD}
+\end{figure}
 %\imag 
 \clearpage
 
-
-
-
-
-\section{Connect to servo motor driver using i2c utility \& Control Servo motor using i2c utility \&Control Pan-tilt using c++ class}
+\section{Connect to servo motor driver using i2c utility \& Control Servo motor using i2c utility \& Control Pan-tilt using c++ class}
 \subsection{Setup}
 In order to make the Raspberry Pi to control the I2C control board and the servo attach with it, following items is require.
 \begin{itemize}
@@ -154,8 +155,26 @@ This program will set up the pwm driver and apply pwm signal to the port. In the
 After testing the servo angle, controlling the Pan-tilt unit can be done by applying the correct pwm signal.
 \subsection{Result}
 By using \textbf{gpio i2cdetect}, the address for the servo driver is 0x40.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_04.jpg}
+	\caption{I2C Reading From Analog Discovery} 
+	\label{BBD}
+\end{figure}
 By using the angle testing program, the pwm range is from 250 to 420.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_06.jpg}
+	\caption{Pan-tilt Unit} 
+	\label{BBD}
+\end{figure}
 After using apply all the program into the system, the pan-tilt will point to the target input into the system.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_01.jpg}
+	\caption{Pan-tilt Unit with Pointing} 
+	\label{BBD}
+\end{figure}
 \clearpage
 
 
@@ -241,8 +260,15 @@ int main(int argc, char **argv)
 	return 0;
 }
 \end{lstlisting}
+\clearpage
 \subsection{Result}
 After follow the procedure above, the phone successfully connect to the Raspberry Pi and receive the default message.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_12.jpg}
+	\caption{Bluetooth Connection} 
+	\label{BBD}
+\end{figure}
 \clearpage
 
 
@@ -285,7 +311,19 @@ By using the previous created classes, it will be easy to create a program to us
 The program contain two parts. The first part is to setup the I2C connection and the bluetooth connection. The second part is read the message that came from the bluetooth and use this value to update pwm signal.
 \subsection{Result}
 When testing the bluetooth, the phone will receive a \textbf{good news} message from the raspberry pi.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_12.jpg}
+	\caption{Bluetooth Connection} 
+	\label{BBD}
+\end{figure}
 When using the bluetooth to control the servo, the servo will move to pre-programmed location base on the command phone send out. 
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_10.jpg}
+	\caption{WorkBranch Setup} 
+	\label{BBD}
+\end{figure}
 \clearpage
 
 \section{Get image using camera and raspistill}
@@ -306,6 +344,12 @@ Install the camera of the Raspberry Pi require the Raspberry Pi to power off dur
 \end{enumerate}
 \subsection{Result}
 After run thought all command above, a image will be in the home directory call "text.jpg".
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_14.jpg}
+	\caption{Picture Take By Raspistill} 
+	\label{BBD}
+\end{figure}
 \clearpage
 
 \section{Install OpenCV, check with -version \& Get image using OpenCV \& Face recognition using OpenCV}
@@ -424,7 +468,19 @@ To finish this task take three steps.
 	\end{lstlisting}
 \subsection{Result}
 After use the camera test program, one windows will appear and a video stream will display.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_11.jpg}
+	\caption{Image From OpenCV} 
+	\label{BBD}
+\end{figure}
 After load the face recognition program, the faces in the video will be marked by a red cycle around it.
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/Lab03_09.jpg}
+	\caption{Face Recognition With OpenCV} 
+	\label{BBD}
+\end{figure}
 \clearpage
 \section{Track Face, keep face centered \& Add BT command: PTU control + Track On/Off}
 \subsection{Setup}
@@ -495,7 +551,26 @@ void readInput(){
 		By using the statement above, the image from camera will be send to face recognition process and the location of the face in the frame. Those information will be use to adjust the PTU to make it point to the correct location of the face.
 \subsection{Result}
 	After load all the program to Raspberry Pi, camera will looking for the face appear in the frame and control the PTU to make the camera point to the center of the face it detected.
+	\begin{figure}[hb]
+		\centering
+		\includegraphics[width=0.5\textwidth]{img/Lab03_08.jpg}
+		\caption{Workbranch Setup With Screen} 
+		\label{BBD}
+	\end{figure}
+	\begin{figure}[hb]
+		\centering
+		\includegraphics[width=0.5\textwidth]{img/Lab03_13.jpg}
+		\caption{Workbranch Setup} 
+		\label{BBD}
+	\end{figure}
+	\begin{figure}[hb]
+		\centering
+		\includegraphics[width=0.5\textwidth]{img/Lab03_09.jpg}
+		\caption{Face Recognition With OpenCV} 
+		\label{BBD}
+	\end{figure}
 \clearpage
 \section{Conclusion}
+The embedded computing system is a very key part in the everyday life. By running this lab, we understand the structure of Raspberry Pi hardware, the way it communicate with the internal system, and how it display in the .  The face tracking system we design, can apply a lot of different place such as surveillance cameras. As the computer system that the most close the physical world, many bug is not only coming from in the software layer but also the hardware connection. It create new challenge to the hardware engineers to fix the systems that have problems. However, it will have greater use also because it close to the physical world people are involved in. 
 
 \end{document}
