@@ -118,9 +118,9 @@ int main(int argc, char** argv)
         // sleep(1);
 
         // //  Send reply back to client
-        // zmq::message_t reply (5);
-        // memcpy (reply.data (), "World", 5);
-        // socket.send (reply);
+        zmq::message_t reply (5);
+        memcpy (reply.data (), "World", 5);
+        socket.send (reply);
     }
 
 
