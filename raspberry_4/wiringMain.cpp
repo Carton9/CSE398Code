@@ -81,12 +81,12 @@ int main(int argc, char** argv)
     cout << "TP02" << endl;
     while (true) {
         zmq::message_t request;
-
         //  Wait for next request from client
         socket.recv (&request);
         char dataBuffer[10];
         cout << "TP03" << endl;
-        memcpy (dataBuffer,request.data (), 10);
+        cout << request.data() << endl;
+        memcpy (dataBuffer,request.data(), 10);
         string data(dataBuffer);
         cout << "Command Get " << data << endl;
         int i=80;
