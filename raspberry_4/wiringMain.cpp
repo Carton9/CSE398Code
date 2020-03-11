@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     // test.start();
     // while(cap.isOpened()){cap >> frame; test.write(frame); frame.release();}
     // test.stop();
-
+    cout << "TP01" << endl;
     zmq::context_t context (1);
     zmq::socket_t socket (context, ZMQ_REP);
     socket.bind ("tcp://*:5555");
