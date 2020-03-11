@@ -33,7 +33,16 @@ using namespace std;
 //     softPwmWrite (26, abs(speed));
 //   }
 // }
-
+MJPEGWriter test(7777);
+VideoCapture cap;
+void run(){
+  Mat frame;
+  cap >> frame;
+  test.write(frame);
+  test.start();
+  while(cap.isOpened()){cap >> frame; test.write(frame); frame.release();}
+  test.stop();
+}
 int main(int argc, char** argv)
 {
   wiringPiSetup () ;
@@ -45,20 +54,19 @@ int main(int argc, char** argv)
   
   // softPwmCreate (23, 0, 100) ;
   // softPwmCreate (26, 0, 100) ;
-  // Motor motor1(23,24,25);
-  // Motor motor2(26,28,27);
+  Motor motor1(23,24,25);
+  Motor motor2(26,28,27);
 
 
 
-    // MJPEGWriter test(7777);
-
-    // VideoCapture cap;
-    // bool ok = cap.open(0);
-    // if (!ok)
-    // {
-    //     printf("no cam found ;(.\n");
-    //     pthread_exit(NULL);
-    // }
+   
+    bool ok = cap.open(0);
+    if (!ok)
+    {
+        printf("no cam found ;(.\n");
+        pthread_exit(NULL);
+    }
+    thread t1(run);
     // Mat frame;
     // cap >> frame;
     // test.write(frame);
@@ -76,15 +84,37 @@ int main(int argc, char** argv)
 
         //  Wait for next request from client
         socket.recv (&request);
-        std::cout << "Received Hello" << std::endl;
+        string data(request.data());
+        cout << "Command Get " << data << endl;
+        int i=80;
+        if (data=="FW"){
+          motor1.motor_control(i);
+          motor2.motor_control(i);
+        }
+        if (data=="BW"){
+          motor1.motor_control(-1*i);
+          motor2.motor_control(-1*i);
+        }
+        if (data=="LF"){
+          motor1.motor_control(-1*i);
+          motor2.motor_control(i);
+        }
+        if (data=="RG"){
+          motor1.motor_control(i);
+          motor2.motor_control(-1*i);
+        }
+        usleep(10000);
+        motor1.motor_control(0);
+        motor2.motor_control(0);
+        // std::cout << "Received Hello" << std::endl;
 
-        //  Do some 'work'
-        sleep(1);
+        // //  Do some 'work'
+        // sleep(1);
 
-        //  Send reply back to client
-        zmq::message_t reply (5);
-        memcpy (reply.data (), "World", 5);
-        socket.send (reply);
+        // //  Send reply back to client
+        // zmq::message_t reply (5);
+        // memcpy (reply.data (), "World", 5);
+        // socket.send (reply);
     }
 
 
